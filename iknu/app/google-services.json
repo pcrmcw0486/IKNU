@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "613386760872",
+    "firebase_url": "https://iknu-1b8de.firebaseio.com",
+    "project_id": "iknu-1b8de",
+    "storage_bucket": "iknu-1b8de.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:613386760872:android:76f4d60de88a243275489d",
+        "android_client_info": {
+          "package_name": "com.example.iknu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "613386760872-dkdoc39mb39lqs8lgttlabjcb8tt8cp5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.iknu",
+            "certificate_hash": "e6f64cde4faf3a934662ca2aa81c3c746b8f427c"
+          }
+        },
+        {
+          "client_id": "613386760872-tojuk3f0a6g103qeo97eobaq6k9mht1o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1QBr3Ox8E9UqSVCWIqfFv2BDuM3cPeXc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "613386760872-tojuk3f0a6g103qeo97eobaq6k9mht1o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
