@@ -33,8 +33,7 @@ public class MainActivity extends AppCompatActivity {
     private String email = "";
     private String password = "";
 
-    Intent Home_Intent = new Intent(MainActivity.this, Home.class);
-    Intent Signup_Intent = new Intent(MainActivity.this, Signup.class);
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -51,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         FirebaseUser currentUser = firebaseAuth.getCurrentUser();
         if(currentUser != null)
         {
+            Intent Home_Intent = new Intent(this, Home.class);
             startActivity(Home_Intent);
             //메인 홈 화면으로 이동
         }
@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         {
             createUser(email, password);
         }*/
+      Intent Signup_Intent = new Intent(this, Signup.class);
       startActivity(Signup_Intent);
     }
 
@@ -74,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
         if(isValidEmail() && isValidPasswd()) {
             loginUser(email, password);
         }
+        else
+            Toast.makeText(this, "Log in 실패", Toast.LENGTH_SHORT).show();
     }
     // 이메일 유효성 검사
     private boolean isValidEmail() {
