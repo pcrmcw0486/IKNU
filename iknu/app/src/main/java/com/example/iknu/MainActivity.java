@@ -3,6 +3,7 @@ package com.example.iknu;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -32,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
     private String email = "";
     private String password = "";
 
+    Intent Home_Intent = new Intent(MainActivity.this, Home.class);
+    Intent Signup_Intent = new Intent(MainActivity.this, Signup.class);
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -41,16 +44,27 @@ public class MainActivity extends AppCompatActivity {
         editTextPassword = findViewById(R.id.edit_password);
     }
 
-
+    @Override
+    protected void onStart() {
+        super.onStart();
+        //현재 유저가 로그인 되어 있는지 확인한다.
+        FirebaseUser currentUser = firebaseAuth.getCurrentUser();
+        if(currentUser != null)
+        {
+            startActivity(Home_Intent);
+            //메인 홈 화면으로 이동
+        }
+    }
 
     public void singUp(View view) {
-        email = editTextEmail.getText().toString();
+      /*  email = editTextEmail.getText().toString();
         password = editTextPassword.getText().toString();
 
         if(isValidEmail()  && isValidPasswd())
         {
             createUser(email, password);
-        }
+        }*/
+      startActivity(Signup_Intent);
     }
 
     public void LogIn(View view) {
@@ -88,19 +102,27 @@ public class MainActivity extends AppCompatActivity {
     }
     // 회원가입
     private void createUser(String email, String password) {
-        firebaseAuth.createUserWithEmailAndPassword(email, password)
+        /*firebaseAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // 회원가입 성공
                             Toast.makeText(MainActivity.this, R.string.success_signup, Toast.LENGTH_SHORT).show();
+                            FirebaseUser user = firebaseAuth.getCurrentUser();
+                            if(user != null)
+                            {
+                                //회원가입 성공시 로그인 화면 ㄱ
+                            }
+
                         } else {
                             // 회원가입 실패
                             Toast.makeText(MainActivity.this, R.string.failed_signup, Toast.LENGTH_SHORT).show();
                         }
                     }
-                });
+                });*/
+        Intent intent = new Intent(MainActivity.this, Signup.class);
+        startActivity(intent);
     }
     // 로그인
     private void loginUser(String email, String password)
@@ -111,10 +133,17 @@ public class MainActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // 로그인 성공
-                            Toast.makeText(MainActivity.this, R.string.success_login, Toast.LENGTH_SHORT).show();
+                            FirebaseUser user  = firebaseAuth.getCurrentUser();
+                            if(user.isEmailVerified()) {
+                                Toast.makeText(MainActivity.this, R.string.success_login, Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(MainActivity.this, Home.class);
+                                startActivity(intent);
+                            }
                         } else {
                             // 로그인 실패
                             Toast.makeText(MainActivity.this, R.string.failed_login, Toast.LENGTH_SHORT).show();
+                            editTextEmail.setText("");
+                            editTextPassword.setText("");
                         }
                     }
                 });
