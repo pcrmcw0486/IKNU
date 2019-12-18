@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
@@ -41,14 +42,15 @@ public class MainActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         editTextEmail = findViewById(R.id.edit_email);
         editTextPassword = findViewById(R.id.edit_password);
+        editTextPassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
         //현재 유저가 로그인 되어 있는지 확인한다.
-    /*    FirebaseUser currentUser = firebaseAuth.getCurrentUser();
-        if(currentUser != null)
+       FirebaseUser currentUser = firebaseAuth.getCurrentUser();
+       /* if(currentUser != null)
         {
             Intent Home_Intent = new Intent(this, Home.class);
             startActivity(Home_Intent);
@@ -57,13 +59,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void singUp(View view) {
-      /*  email = editTextEmail.getText().toString();
-        password = editTextPassword.getText().toString();
-
-        if(isValidEmail()  && isValidPasswd())
-        {
-            createUser(email, password);
-        }*/
       Intent Signup_Intent = new Intent(this, Signup.class);
       startActivity(Signup_Intent);
     }
@@ -105,25 +100,7 @@ public class MainActivity extends AppCompatActivity {
     }
     // 회원가입
     private void createUser(String email, String password) {
-        /*firebaseAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // 회원가입 성공
-                            Toast.makeText(MainActivity.this, R.string.success_signup, Toast.LENGTH_SHORT).show();
-                            FirebaseUser user = firebaseAuth.getCurrentUser();
-                            if(user != null)
-                            {
-                                //회원가입 성공시 로그인 화면 ㄱ
-                            }
-
-                        } else {
-                            // 회원가입 실패
-                            Toast.makeText(MainActivity.this, R.string.failed_signup, Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });*/
+        //회원가입 페이지로 넘어감.
         Intent intent = new Intent(MainActivity.this, Signup.class);
         startActivity(intent);
     }
