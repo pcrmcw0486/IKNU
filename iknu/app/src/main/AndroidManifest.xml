@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".Map_Navi"></activity>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDLGpIUtcoKEbHBZJ4D7YR-rx2pU5A4sSI"/>
+        <activity android:name=".RecycleViewAdapter"></activity>
+        <activity android:name=".Map_Navi" />
         <activity android:name=".Home" />
         <activity android:name=".Signup" />
         <activity android:name=".MainActivity">

@@ -847,6 +847,7 @@ id dialog_button
 id dimensions
 id direct
 id disableHome
+id editText
 id edit_email
 id edit_password
 id edit_query
@@ -894,6 +895,7 @@ id percent
 id progress_circular
 id progress_horizontal
 id radio
+id recyclerview
 id right
 id right_icon
 id right_side
@@ -942,6 +944,7 @@ id text
 id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
+id textview
 id time
 id title
 id titleDividerNoCustom
@@ -1002,6 +1005,7 @@ layout abc_tooltip
 layout activity_home
 layout activity_main
 layout activity_map__navi
+layout activity_recycle_view_adapter
 layout activity_signup
 layout custom_dialog
 layout notification_action

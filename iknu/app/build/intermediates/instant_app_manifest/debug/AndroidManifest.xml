@@ -30,6 +30,11 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.AppCompat.NoActionBar" >
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDLGpIUtcoKEbHBZJ4D7YR-rx2pU5A4sSI" />
+
+        <activity android:name="com.example.iknu.RecycleViewAdapter" />
         <activity android:name="com.example.iknu.Map_Navi" />
         <activity android:name="com.example.iknu.Home" />
         <activity android:name="com.example.iknu.Signup" />

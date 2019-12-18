@@ -2,6 +2,7 @@ package com.example.iknu;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -14,5 +15,7 @@ public class Home extends AppCompatActivity {
     }
 
     public void MapBtn(View view) {
+        Intent intent = new Intent(Home.this, Map_Navi.class);
+        startActivity(intent);
     }
 }
