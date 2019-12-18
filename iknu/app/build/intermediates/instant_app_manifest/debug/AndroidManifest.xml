@@ -9,6 +9,8 @@
         android:minSdkVersion="24"
         android:targetSdkVersion="29" />
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -35,7 +37,9 @@
             android:value="AIzaSyDLGpIUtcoKEbHBZJ4D7YR-rx2pU5A4sSI" />
 
         <activity android:name="com.example.iknu.RecycleViewAdapter" />
-        <activity android:name="com.example.iknu.Map_Navi" />
+        <activity
+            android:name="com.example.iknu.Map_Navi"
+            android:windowSoftInputMode="adjustNothing" />
         <activity android:name="com.example.iknu.Home" />
         <activity android:name="com.example.iknu.Signup" />
         <activity android:name="com.example.iknu.MainActivity" >

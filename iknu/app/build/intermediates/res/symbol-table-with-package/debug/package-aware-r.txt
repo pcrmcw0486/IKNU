@@ -757,6 +757,7 @@ id ALT
 id CTRL
 id FUNCTION
 id META
+id Myposition
 id SHIFT
 id SYM
 id Sign_up_Age
@@ -829,6 +830,7 @@ id blocking
 id bottom
 id btn_signIn
 id btn_signUp
+id button
 id buttonPanel
 id center_vertical
 id chains

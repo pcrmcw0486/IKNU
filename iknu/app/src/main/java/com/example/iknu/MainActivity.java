@@ -119,6 +119,8 @@ public class MainActivity extends AppCompatActivity {
                                 Intent intent = new Intent(MainActivity.this, Home.class);
                                 startActivity(intent);
                             }
+                            else
+                                Toast.makeText(MainActivity.this,"이메일인증을하십시오",Toast.LENGTH_SHORT).show();
                         } else {
                             // 로그인 실패
                             Toast.makeText(MainActivity.this, R.string.failed_login, Toast.LENGTH_SHORT).show();

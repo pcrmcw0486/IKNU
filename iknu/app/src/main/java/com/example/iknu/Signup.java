@@ -127,6 +127,7 @@ public class Signup extends AppCompatActivity {
                                                 Log.w("TAG", "Error adding document with ",e);
                                             }
                                         });
+                                
                                  Intent intent = new Intent(Signup.this, MainActivity.class);
                                   startActivity(intent);
                             } else {
