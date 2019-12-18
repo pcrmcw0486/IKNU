@@ -47,13 +47,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         //현재 유저가 로그인 되어 있는지 확인한다.
-        FirebaseUser currentUser = firebaseAuth.getCurrentUser();
+    /*    FirebaseUser currentUser = firebaseAuth.getCurrentUser();
         if(currentUser != null)
         {
             Intent Home_Intent = new Intent(this, Home.class);
             startActivity(Home_Intent);
             //메인 홈 화면으로 이동
-        }
+        }*/
     }
 
     public void singUp(View view) {
