@@ -12,4 +12,11 @@
         android:layout_height="wrap_content"
         android:text="Home Activity"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="map!"
+        android:onClick="MapBtn"
+        />
+
 </LinearLayout>
