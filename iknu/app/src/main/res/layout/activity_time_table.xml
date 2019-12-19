@@ -1502,7 +1502,7 @@
                 android:layout_weight="1"
                 android:background="#ffffff"
                 android:onClick="Add_Lecture"
-                android:text="Add Lecture"
+                android:text="@string/add_lecture"
                 android:textColor="#111111">
 
             </Button>
@@ -1520,7 +1520,7 @@
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:background="@null"
-                    android:hint=" Lecture Name"
+                    android:hint="@string/lecture_name"
                     android:textAlignment="center" />
 
                 <EditText
@@ -1530,7 +1530,7 @@
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:background="@null"
-                    android:hint=" Professor Name"
+                    android:hint="@string/professor_name"
                     android:textAlignment="center" />
 
                 <Spinner
@@ -1540,7 +1540,7 @@
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:background="@null"
-                    android:hint="Choose day"
+                    android:hint="@string/choose_day"
                     android:spinnerMode="dialog"
                     android:textAlignment="center" />
 
@@ -1552,7 +1552,7 @@
                     android:layout_weight="1"
                     android:background="@null"
                     android:onClick="timesetting"
-                    android:text="Time" />
+                    android:text="@string/time" />
 
             </LinearLayout>
         </LinearLayout>

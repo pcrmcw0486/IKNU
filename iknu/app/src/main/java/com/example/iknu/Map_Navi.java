@@ -82,7 +82,7 @@ public class Map_Navi extends AppCompatActivity implements TextWatcher, OnMapRea
                     {
                         items.add(document.getId());
                         Lat.add(Float.valueOf(document.getData().get("Lat").toString()));
-                        Long.add(Float.valueOf(document.getData().get("Lang").toString()));
+                        Long.add(Float.valueOf(document.getData().get("Long").toString()));
                         //Log.i("TAG", document.getId() + " => " + document.getData().get("Lang").toString());
                     }
                 }
@@ -109,15 +109,21 @@ public class Map_Navi extends AppCompatActivity implements TextWatcher, OnMapRea
         mMap = googleMap;
 
         MarkerOptions markerOptions = new MarkerOptions();
-        LatLng SEOUL = new LatLng(37.56,126.97);
-        markerOptions.position(SEOUL);
-        markerOptions.title("서울");
-        markerOptions.snippet("한국의 수도");
-        mMap.addMarker(markerOptions);
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(SEOUL));
-        mMap.animateCamera(CameraUpdateFactory.zoomTo(10));
-        recyclerView.bringToFront();
 
+        LatLng userPosition;
+        locationManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+        Location userLocation = getMyLocation();
+        userPosition = new LatLng(userLocation.getLatitude(),userLocation.getLongitude());
+        if(userLocation != null)
+        {
+            markerOptions.title("현위치");
+            markerOptions.snippet("내위치");
+            markerOptions.position(userPosition);
+            mMap.addMarker(markerOptions);
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(userPosition));
+            mMap.animateCamera(CameraUpdateFactory.zoomTo(12));
+        }
+        recyclerView.bringToFront();
     }
 
     @Override
@@ -142,6 +148,11 @@ public class Map_Navi extends AppCompatActivity implements TextWatcher, OnMapRea
         Float Select_Lat = Lat.get(items.indexOf(building));
         Float Select_Long = Long.get(items.indexOf(building));
         LatLng POSITION = new LatLng(Select_Lat, Select_Long);
+        MarkerOptions markerOptions = new MarkerOptions();
+        markerOptions.position(POSITION);
+        markerOptions.title(building);
+        markerOptions.snippet(building);
+        mMap.addMarker(markerOptions);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(POSITION));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
     }
@@ -153,6 +164,10 @@ public class Map_Navi extends AppCompatActivity implements TextWatcher, OnMapRea
         if(userLocation != null)
         {
             userPosition = new LatLng(userLocation.getLatitude(),userLocation.getLongitude());
+            MarkerOptions markerOptions = new MarkerOptions();
+            markerOptions.position(userPosition);
+            markerOptions.title("내위치");
+            markerOptions.snippet("내위치");
             mMap.moveCamera(CameraUpdateFactory.newLatLng(userPosition));
             mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
         }

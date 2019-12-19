@@ -14,7 +14,7 @@
         android:layout_height="21dp"
         android:layout_marginStart="24dp"
         android:layout_marginBottom="456dp"
-        android:text="이름"
+        android:text="@string/Name"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -34,7 +34,7 @@
         android:layout_height="21dp"
         android:layout_marginStart="24dp"
         android:layout_marginBottom="384dp"
-        android:text="학번"
+        android:text="@string/StudentId"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -54,7 +54,7 @@
         android:layout_height="21dp"
         android:layout_marginStart="24dp"
         android:layout_marginBottom="308dp"
-        android:text="나이"
+        android:text="@string/Age"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -74,7 +74,7 @@
         android:layout_height="21dp"
         android:layout_marginStart="24dp"
         android:layout_marginBottom="236dp"
-        android:text="E-mail"
+        android:text="@string/Email"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -116,7 +116,7 @@
         android:layout_marginStart="64dp"
         android:layout_marginBottom="52dp"
         android:onClick="SignupRequest"
-        android:text="완료"
+        android:text="@string/Complete"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -126,7 +126,7 @@
         android:layout_marginEnd="52dp"
         android:layout_marginBottom="52dp"
         android:onClick="BackButton"
-        android:text="뒤로"
+        android:text="@string/Back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -145,7 +145,7 @@
         android:layout_height="42dp"
         android:layout_marginEnd="48dp"
         android:layout_marginBottom="492dp"
-        android:text="회원가입 이후에 E-mail 인증을 하십시오"
+        android:text="@string/Prompt1"
         android:textAlignment="center"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"

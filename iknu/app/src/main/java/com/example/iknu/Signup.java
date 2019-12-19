@@ -67,19 +67,19 @@ public class Signup extends AppCompatActivity {
         {
             if(!isValidEmail(check_email))
             {
-                Toast.makeText(this.getApplicationContext(),"e-mail 형식이 맞지않습니다",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this.getApplicationContext(),R.string.format_email,Toast.LENGTH_SHORT).show();
             }
             if(!isValidPasword(check_password))
             {
-                Toast.makeText(this.getApplicationContext(),"password 형식이 맞지 않습니다",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this.getApplicationContext(),R.string.format_password,Toast.LENGTH_SHORT).show();
             }
             if(!isValidName(check_name))
             {
-                Toast.makeText(this.getApplicationContext(),"이름을 10 자리 안으로 입력하세요",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this.getApplicationContext(),R.string.format_name,Toast.LENGTH_SHORT).show();
             }
             if(!isValidAge(check_age))
             {
-                Toast.makeText(this.getApplicationContext(),"나이가 올바르지 않습니다.",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this.getApplicationContext(),R.string.format_age,Toast.LENGTH_SHORT).show();
             }
 
             email.setText("");
@@ -101,7 +101,7 @@ public class Signup extends AppCompatActivity {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
                                         if (task.isSuccessful()) {
-                                            Toast.makeText(Signup.this, "메일발송완료!", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(Signup.this, R.string.send_email, Toast.LENGTH_SHORT).show();
                                         } else {
                                             Toast.makeText(Signup.this, "??", Toast.LENGTH_LONG).show();
                                         }

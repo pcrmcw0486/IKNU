@@ -70,8 +70,9 @@ public class MainActivity extends AppCompatActivity {
         if(isValidEmail() && isValidPasswd()) {
             loginUser(email, password);
         }
+
         else
-            Toast.makeText(this, "Log in 실패", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.failed_login, Toast.LENGTH_SHORT).show();
     }
     // 이메일 유효성 검사
     private boolean isValidEmail() {
@@ -121,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
                                 finish();
                             }
                             else
-                                Toast.makeText(MainActivity.this,"이메일인증을하십시오",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivity.this,R.string.request_email_validation,Toast.LENGTH_SHORT).show();
                         } else {
                             // 로그인 실패
                             Toast.makeText(MainActivity.this, R.string.failed_login, Toast.LENGTH_SHORT).show();

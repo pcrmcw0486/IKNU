@@ -1043,6 +1043,7 @@ id textView3
 id textView4
 id textView5
 id textView6
+id textView7
 id textview
 id thursday0
 id thursday1
@@ -1151,6 +1152,7 @@ layout activity_home
 layout activity_main
 layout activity_map__navi
 layout activity_recycle_view_adapter
+layout activity_setting
 layout activity_signup
 layout activity_time_table
 layout activity_translate
