@@ -40,6 +40,8 @@ public class Home extends AppCompatActivity {
             case R.id.Forum_btn :
                 break;
             case R.id.Setting_btn :
+                intent = new Intent(Home.this, Setting.class);
+                startActivity(intent);
                 break;
             case R.id.Home_btn :
                 default:

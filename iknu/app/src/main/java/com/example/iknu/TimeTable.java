@@ -344,6 +344,9 @@ public class TimeTable extends AppCompatActivity {
             case R.id.Forum_btn :
                 break;
             case R.id.Setting_btn :
+                intent = new Intent(TimeTable.this, Setting.class);
+                startActivity(intent);
+                finish();
                 break;
             case R.id.Home_btn :
                 intent = new Intent(TimeTable.this, Home.class);

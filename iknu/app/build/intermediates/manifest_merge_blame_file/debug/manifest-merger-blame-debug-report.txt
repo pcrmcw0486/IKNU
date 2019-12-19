@@ -41,7 +41,7 @@
 22-->[com.google.android.gms:play-services-measurement:17.2.0] C:\Users\Gogi\.gradle\caches\transforms-2\files-2.1\fdc70b0b7960929853ff7c757beb7d4f\play-services-measurement-17.2.0\AndroidManifest.xml:26:22-107
 23
 24    <application
-24-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:9:5-36:19
+24-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:9:5-39:19
 25        android:allowBackup="true"
 25-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:10:9-35
 26        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -55,53 +55,55 @@
 30-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:13:9-54
 31        android:supportsRtl="true"
 31-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:14:9-35
-32        android:testOnly="true"
-33        android:theme="@style/Theme.AppCompat.NoActionBar" >
-33-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:15:9-59
+32        android:theme="@style/Theme.AppCompat.NoActionBar" >
+32-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:15:9-59
+33        <activity android:name="com.example.iknu.Setting" />
+33-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:16:9-54
+33-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:16:19-42
 34        <activity
-34-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:16:9-100
+34-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:17:9-19:59
 35            android:name="com.example.iknu.Translate"
-35-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:16:19-44
+35-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:18:13-38
 36            android:windowSoftInputMode="adjustNothing" />
-36-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:16:45-88
+36-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:19:13-56
 37        <activity android:name="com.example.iknu.TimeTable" />
-37-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:17:9-47
-37-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:17:19-44
+37-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:20:9-47
+37-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:20:19-44
 38
 39        <meta-data
-39-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:19:9-21:71
+39-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:22:9-24:71
 40            android:name="com.google.android.geo.API_KEY"
-40-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:20:13-58
+40-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:23:13-58
 41            android:value="AIzaSyDLGpIUtcoKEbHBZJ4D7YR-rx2pU5A4sSI" />
-41-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:21:13-68
+41-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:24:13-68
 42
 43        <activity android:name="com.example.iknu.RecycleViewAdapter" />
-43-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:23:9-56
-43-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:23:19-53
+43-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:26:9-56
+43-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:26:19-53
 44        <activity
-44-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:24:9-26:59
+44-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:27:9-29:59
 45            android:name="com.example.iknu.Map_Navi"
-45-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:25:13-37
+45-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:28:13-37
 46            android:windowSoftInputMode="adjustNothing" />
-46-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:26:13-56
+46-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:29:13-56
 47        <activity android:name="com.example.iknu.Home" />
-47-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:27:9-42
-47-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:27:19-39
+47-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:30:9-42
+47-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:30:19-39
 48        <activity android:name="com.example.iknu.Signup" />
-48-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:28:9-44
-48-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:28:19-41
+48-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:31:9-44
+48-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:31:19-41
 49        <activity android:name="com.example.iknu.MainActivity" >
-49-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:29:9-35:20
-49-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:29:19-47
+49-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:32:9-38:20
+49-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:32:19-47
 50            <intent-filter>
-50-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:30:13-34:29
+50-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:33:13-37:29
 51                <action android:name="android.intent.action.MAIN" />
-51-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:31:17-69
-51-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:31:25-66
+51-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:34:17-69
+51-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:34:25-66
 52
 53                <category android:name="android.intent.category.LAUNCHER" />
-53-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:33:17-77
-53-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:33:27-74
+53-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:36:17-77
+53-->D:\gitIKNU\IKNU\iknu\app\src\main\AndroidManifest.xml:36:27-74
 54            </intent-filter>
 55        </activity>
 56        <activity

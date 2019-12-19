@@ -192,6 +192,9 @@ public class Map_Navi extends AppCompatActivity implements TextWatcher, OnMapRea
             case R.id.Forum_btn :
                 break;
             case R.id.Setting_btn :
+                intent = new Intent(Map_Navi.this, Setting.class);
+                startActivity(intent);
+                finish();
                 break;
             case R.id.Home_btn :
                 intent = new Intent(Map_Navi.this, Home.class);

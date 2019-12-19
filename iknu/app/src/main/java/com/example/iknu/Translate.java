@@ -197,6 +197,9 @@ public class Translate extends AppCompatActivity {
             case R.id.Forum_btn :
                 break;
             case R.id.Setting_btn :
+                intent = new Intent(Translate.this, Setting.class);
+                startActivity(intent);
+                finish();
                 break;
             case R.id.Home_btn :
                 intent = new Intent(Translate.this, Home.class);

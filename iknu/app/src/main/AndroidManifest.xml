@@ -13,7 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".Translate" android:windowSoftInputMode="adjustNothing"></activity>
+        <activity android:name=".Setting"></activity>
+        <activity
+            android:name=".Translate"
+            android:windowSoftInputMode="adjustNothing" />
         <activity android:name=".TimeTable" />
 
         <meta-data
