@@ -71,6 +71,22 @@ public class NewWrite_Forum extends AppCompatActivity {
     }
 
     public void onMove(View view) {
+        Intent intent = null;
+        switch (view.getId()) {
+            case R.id.Forum_btn:
+                break;
+            case R.id.Setting_btn:
+                intent = new Intent(NewWrite_Forum.this, Setting.class);
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.Home_btn:
+                intent = new Intent(NewWrite_Forum.this, Home.class);
+                startActivity(intent);
+                finish();
+            default:
+                return;
+        }
     }
 
     public void SendText(View view) {

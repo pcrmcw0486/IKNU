@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
     tools:context=".Forum_View">
 
     <TextView
@@ -12,6 +11,8 @@
         android:layout_width="180dp"
         android:layout_height="52dp"
         android:layout_marginStart="236dp"
+        android:background="@color/colorWhite"
+        android:textColor="@color/colorBlack"
         android:layout_marginBottom="492dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -78,12 +79,16 @@
         android:layout_height="61dp"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="544dp"
+        android:background="@color/colorWhite"
+        android:textColor="@color/colorBlack"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ScrollView
         android:layout_width="409dp"
         android:layout_height="431dp"
+        android:background="@color/colorWhite"
+        android:textColor="@color/colorBlack"
         android:layout_marginBottom="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -95,6 +100,8 @@
 
             <TextView
                 android:id="@+id/Text_context"
+                android:background="@color/colorWhite"
+                android:textColor="@color/colorBlack"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="TextView" />
@@ -105,6 +112,8 @@
         android:id="@+id/Forum_Type"
         android:layout_width="371dp"
         android:layout_height="44dp"
+        android:background="@color/colorWhite"
+        android:textColor="@color/colorBlack"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="616dp"
         app:layout_constraintBottom_toBottomOf="parent"

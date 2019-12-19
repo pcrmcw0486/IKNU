@@ -47,5 +47,12 @@ public class Setting extends AppCompatActivity {
     public void languageChange(View view) {
         Intent intent = new Intent(Setting.this, LanguageChange.class);
         startActivity(intent);
+        finish();
+    }
+
+    public void GotoTranslate(View view) {
+        Intent intent = new Intent(Setting.this, Translate.class);
+        startActivity(intent);
+        finish();
     }
 }

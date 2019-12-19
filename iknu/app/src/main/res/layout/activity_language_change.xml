@@ -1,42 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@color/colorPrimary"
+
     tools:context=".LanguageChange">
 
-    <Button
-        android:id="@+id/Language1"
-        android:layout_width="wrap_content"
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="276dp"
-        android:onClick="changeLanguage"
-        android:text="@string/Language1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textColor="@color/colorWhite"
+        android:textStyle="italic"
+        android:background="@color/colorRed"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:text="@string/언어"></TextView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/Language3"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="225dp"
+            android:layout_weight="1"
+            android:onClick="changeLanguage"
+            android:text="@string/Language3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/Language2"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="225dp"
+            android:layout_weight="1"
+            android:onClick="changeLanguage"
+            android:text="@string/Language2"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/Language1"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="225dp"
+            android:layout_weight="1"
+            android:onClick="changeLanguage"
+            android:text="@string/Language1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </LinearLayout>
+
 
     <Button
-        android:id="@+id/Language2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="136dp"
-        android:layout_marginTop="276dp"
-        android:onClick="changeLanguage"
-        android:text="@string/Language2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/imageButton"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="265dp"
+        android:layout_weight="1"
+        android:background="@drawable/back"
+        android:onClick="onMove"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/back" />
 
-    <Button
-        android:id="@+id/Language3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="280dp"
-        android:layout_marginTop="276dp"
-        android:onClick="changeLanguage"
-        android:text="@string/Language3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

@@ -2,6 +2,8 @@
     <string name="app_name">iknu</string>
     <string name="email">이메일</string>
     <string name="password">비밀번호</string>
+    <string name="passwordCheck">비밀번호 재확인</string>
+    <string name="passwordText">(8글자이상 특수문자 제외)</string>
 
     <string name="signin">로그인</string>
     <string name="success_login">로그인 성공</string>
@@ -14,7 +16,7 @@
     <string name="request_email_validation">이메일 인증을 하십시오</string>
     <string name="format_email">이메일 형식이 맞지 않습니다</string>
     <string name="format_password">패스워드 형식이 맞지 않습니다</string>
-
+    <string name="format_passwordre">패스워드가 일치하지 않습니다</string>
     <string name="format_name">이름을 10 자리 안으로 입력하세요</string>
     <string name="format_age">나이가 올바르지 않습니다</string>
     <string name="send_email">메일 발송 완료!</string>
@@ -39,13 +41,15 @@
     <string name="choose_day">날짜 선택</string>
     <string name="time">시간</string>
     <string name="lecture_name">과목명</string>
-    <string name="언어">언어</string>
+    <string name="언어">언어 설정 변경</string>
     //추가
-    <string name="choose_forum_type">Choose Forum Type</string>
-    <string name="academics">Academics</string>
-    <string name="internship">Internship</string>
-    <string name="seminar">Seminar</string>
-    <string name="cultural">Cultural</string>
-    <string name="club_activities">Club Activities</string>
-    <string name="news">News</string>
+    <string name="choose_forum_type">게시판 선택</string>
+    <string name="academics">학회</string>
+    <string name="internship">인턴쉽</string>
+    <string name="seminar">세미나</string>
+    <string name="cultural">문화</string>
+    <string name="club_activities">동아리 활동</string>
+    <string name="news">뉴스</string>
+    <string name="recogSound">음성인식</string>
+    <string name="transplateStart">번역실행</string>
 </resources>

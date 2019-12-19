@@ -34,10 +34,12 @@ public class Signup extends AppCompatActivity {
     private FirebaseAuth mAuth;
     EditText email;
     EditText password;
+    EditText password_re;
     EditText name;
     EditText age;
     EditText studentID;
     FirebaseFirestore db ;
+    MainActivity  loginstate = new MainActivity();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,10 +49,12 @@ public class Signup extends AppCompatActivity {
         email = (EditText) findViewById(R.id.Sign_up_ID);
         password = (EditText) findViewById(R.id.Sign_up_PW);
         password.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+        password_re = (EditText) findViewById(R.id.Sign_up_PW2);
         name = (EditText)findViewById(R.id.Sign_up_Name);
         age = (EditText)findViewById(R.id.Sign_up_Age);
         studentID = (EditText)findViewById(R.id.Sign_up_StudentID);
         db = FirebaseFirestore.getInstance();
+
     }
 
 
@@ -59,36 +63,51 @@ public class Signup extends AppCompatActivity {
 
         String check_email = email.getText().toString();
         String check_password = password.getText().toString();
+        String check_passwrodre = password_re.getText().toString();
         final String check_name = name.getText().toString();
         final String check_SID = studentID.getText().toString();
         final int check_age = Integer.valueOf(age.getText().toString());
 
-        if (!isValidEmail(check_email) || !isValidPasword(check_password) || !isValidAge(check_age) || !isValidName(check_name))
+        if (!isValidEmail(check_email) || !isValidPasword(check_password) || !isValidAge(check_age) || !isValidName(check_name) || !isValidPaswordre(check_password,check_passwrodre))
         {
             if(!isValidEmail(check_email))
             {
                 Toast.makeText(this.getApplicationContext(),R.string.format_email,Toast.LENGTH_SHORT).show();
+                email.setText("");
+                password.setText("");
+                password_re.setText("");
+
             }
             if(!isValidPasword(check_password))
             {
                 Toast.makeText(this.getApplicationContext(),R.string.format_password,Toast.LENGTH_SHORT).show();
+                password.setText("");
+                password_re.setText("");
+
+            }
+            if(!isValidPaswordre(check_password,check_passwrodre))
+            {
+                Toast.makeText(this.getApplicationContext(),R.string.format_passwordre,Toast.LENGTH_SHORT).show();
+                password.setText("");
+                password_re.setText("");
             }
             if(!isValidName(check_name))
             {
                 Toast.makeText(this.getApplicationContext(),R.string.format_name,Toast.LENGTH_SHORT).show();
+                name.setText("");
+                password.setText("");
+                password_re.setText("");
             }
             if(!isValidAge(check_age))
             {
                 Toast.makeText(this.getApplicationContext(),R.string.format_age,Toast.LENGTH_SHORT).show();
+                age.setText("");
+                password.setText("");
+                password_re.setText("");
             }
-
-            email.setText("");
-            password.setText("");
-            name.setText("");
-            age.setText("");
         }
 
-      //step 1 가입 요청
+        //step 1 가입 요청
         else {
             mAuth.createUserWithEmailAndPassword(check_email, check_password)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -127,9 +146,12 @@ public class Signup extends AppCompatActivity {
                                                 Log.w("TAG", "Error adding document with ",e);
                                             }
                                         });
-                                
-                                 Intent intent = new Intent(Signup.this, MainActivity.class);
-                                  startActivity(intent);
+                                mAuth=FirebaseAuth.getInstance();
+                                mAuth.signOut();
+                                //loginstate.setLoginState(1);
+                                Intent intent = new Intent(Signup.this, MainActivity.class);
+                                startActivity(intent);
+                                finish();
                             } else {
                                 //가입에 실패할 경우 토스트 메시지 변환
                                 Toast.makeText(Signup.this, "Authentication failed", Toast.LENGTH_SHORT).show();
@@ -163,14 +185,22 @@ public class Signup extends AppCompatActivity {
         {
             err = true;
         }
-
+        return err;
+    }
+    public static boolean isValidPaswordre(String password ,String password_re)
+    {
+        boolean err = false;
+        if(password.equals(password_re)==true)
+        {
+            err = true;
+        }
         return err;
     }
 
     public static boolean isValidName(String name)
     {
         boolean err  = false;
-        if(name.length() < 10)
+        if(name.length() < 30)
             err = true;
         return err;
     }
@@ -185,5 +215,6 @@ public class Signup extends AppCompatActivity {
     public void BackButton(View view) {
         Intent intent = new Intent(Signup.this, MainActivity.class);
         startActivity(intent);
+        finish();
     }
 }

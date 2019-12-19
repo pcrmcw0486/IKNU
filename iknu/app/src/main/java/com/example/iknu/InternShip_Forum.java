@@ -87,6 +87,7 @@ public class InternShip_Forum extends AppCompatActivity {
                 intent.putExtra("documentID", textID.get(position));
                 intent.putExtra("documentName", "InternShip");
                 startActivity(intent);
+                finish();
             }
         });
     }

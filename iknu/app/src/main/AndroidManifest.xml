@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -31,7 +32,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyDLGpIUtcoKEbHBZJ4D7YR-rx2pU5A4sSI" />
+            android:value="AIzaSyDYuWc6AB0yVevx0abSl-V_ygshyIj_ilA" />
 
         <activity android:name=".RecycleViewAdapter" />
         <activity

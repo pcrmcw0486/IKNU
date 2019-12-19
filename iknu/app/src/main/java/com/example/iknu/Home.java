@@ -28,22 +28,27 @@ public class Home extends AppCompatActivity {
             case R.id.map_btn :
                 intent = new Intent(Home.this,Map_Navi.class);
                 startActivity(intent);
+                finish();
                 break;
             case R.id.timetable_btn :
                 intent = new Intent(Home.this, TimeTable.class);
                 startActivity(intent);
+                finish();
                 break;
             case R.id.translate_btn :
                 intent = new Intent(Home.this, Translate.class);
                 startActivity(intent);
+                finish();
                 break;
             case R.id.Forum_btn :
                 intent = new Intent(Home.this, Forum.class);
                 startActivity(intent);
+                finish();
                 break;
             case R.id.Setting_btn :
                 intent = new Intent(Home.this, Setting.class);
                 startActivity(intent);
+                finish();
                 break;
             case R.id.Home_btn :
                 default:

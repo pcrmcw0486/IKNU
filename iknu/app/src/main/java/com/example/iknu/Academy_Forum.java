@@ -92,6 +92,7 @@ public class Academy_Forum extends AppCompatActivity {
               intent.putExtra("documentID", textID.get(position));
               intent.putExtra("documentName", "AcademyForum");
               startActivity(intent);
+              finish();
           }
       });
     }
@@ -129,8 +130,8 @@ public class Academy_Forum extends AppCompatActivity {
         String name;
         public Text(String title, String name)
         {
-            this.title = title;
-            this.name = name;
+            this.title = "제목 :: "+title;
+            this.name = "내용 :  "+name;
         }
     }
 }

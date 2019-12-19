@@ -88,6 +88,7 @@ public class Cultural_Forum extends AppCompatActivity {
                 intent.putExtra("documentID", textID.get(position));
                 intent.putExtra("documentName", "CULTURAL");
                 startActivity(intent);
+                finish();
             }
         });
     }

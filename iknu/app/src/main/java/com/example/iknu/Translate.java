@@ -2,10 +2,13 @@ package com.example.iknu;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -29,43 +32,47 @@ public class Translate extends AppCompatActivity {
     private Button translationButton;
     private TextView resultText;
     private String result;
-    public int sourceLang=1;   // 1=한국어, 2=영어, 3=일본어,  소스 언어
-    public int targetLang=2;   // 1=한국어, 2=영어, 3=일본어,  목표 언어
+    public int sourceLang = 1;   // 1=한국어, 2=영어, 3=일본어,  소스 언어
+    public int targetLang = 2;   // 1=한국어, 2=영어, 3=일본어,  목표 언어
 
     public void SourceLangSetOnclickListener(View view) {
         TextView SourceButtonText = (TextView) findViewById(R.id.ButtonSourceLang);
-        if(sourceLang == 1 ){   // 현재 상태 한국어
-            sourceLang+=1;    //다음 언어를 가르킨다.
+        if (sourceLang == 1) {   // 현재 상태 한국어
+            sourceLang += 1;    //다음 언어를 가르킨다.
             SourceButtonText.setText(getString(R.string.Language2));
 
-        }
-        else if(sourceLang == 2){ // 현재 상태 영어
-            sourceLang+=1;
+        } else if (sourceLang == 2) { // 현재 상태 영어
+            sourceLang += 1;
             SourceButtonText.setText(getString(R.string.Language3));
-        }
-        else if(sourceLang ==3){ // 현재 상태 일본어
-            sourceLang=1;
+        } else if (sourceLang == 3) { // 현재 상태 일본어
+            sourceLang = 1;
             SourceButtonText.setText(getString(R.string.Language1));
         }
 
-        Toast.makeText(getApplicationContext(),"Succese",Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Succese", Toast.LENGTH_SHORT).show();
+        if(view !=null){
+            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(),0);
+        }
     }
 
     public void TargetLangSetOnclickListener(View view) {
         TextView TargetButtonText = (TextView) findViewById(R.id.ButtonTargetLang);
-        if(targetLang == 1 ){   // 현재 상태 한국어
-            targetLang+=1;    //다음 언어를 가르킨다.
+        if (targetLang == 1) {   // 현재 상태 한국어
+            targetLang += 1;    //다음 언어를 가르킨다.
             TargetButtonText.setText(getString(R.string.Language2));
-        }
-        else if(targetLang == 2){ // 현재 상태 영어
-            targetLang+=1;
+        } else if (targetLang == 2) { // 현재 상태 영어
+            targetLang += 1;
             TargetButtonText.setText(getString(R.string.Language3));
-        }
-        else if(targetLang ==3){ // 현재 상태 일본어
-            targetLang=1;
+        } else if (targetLang == 3) { // 현재 상태 일본어
+            targetLang = 1;
             TargetButtonText.setText(getString(R.string.Language1));
         }
-        Toast.makeText(getApplicationContext(),"Succese",Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Succese", Toast.LENGTH_SHORT).show();
+        if(view !=null){
+            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(),0);
+        }
     }
 
     public void StartButton(View view) {
@@ -73,15 +80,19 @@ public class Translate extends AppCompatActivity {
         translationButton = (Button) findViewById(R.id.bt_translate);
         resultText = (TextView) findViewById(R.id.tv_result);
         new BackgroundTask().execute();
+        if(view !=null){
+            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(),0);
+        }
     }
 
     //백 그라운드에서 파파고 API와 연결하여 번역 결과를 가져옵니다.
-    class BackgroundTask extends AsyncTask<Integer, Integer, Integer>{
-        protected void onPreExecute(){
+    class BackgroundTask extends AsyncTask<Integer, Integer, Integer> {
+        protected void onPreExecute() {
         }
 
         @Override
-        protected Integer doInBackground(Integer...arg0) {
+        protected Integer doInBackground(Integer... arg0) {
             StringBuilder output = new StringBuilder();
             String clientId = "gqZ7OhuggbnncGZv_mFj";
             String clientSecret = "L0VzwCnpdw";
@@ -98,48 +109,40 @@ public class Translate extends AppCompatActivity {
                 con.setRequestProperty("X-Naver-Client-Secret", clientSecret);
 
                 // 번역할 문장을 파라미터로 전송합니다.
-                String  postParms    = "source=en&target=ja&text=" + text;
-                String  postParms1_1 = "source=ko&target=ko&text=" + text;
-                String  postParms1_2 = "source=ko&target=en&text=" + text;
-                String  postParms1_3 = "source=ko&target=ja&text=" + text;
-                String  postParms2_1 = "source=en&target=ko&text=" + text;
-                String  postParms2_2 = "source=en&target=en&text=" + text;
-                String  postParms2_3 = "source=en&target=ja&text=" + text;
-                String  postParms3_1 = "source=ja&target=ko&text=" + text;
-                String  postParms3_2 = "source=ja&target=en&text=" + text;
-                String  postParms3_3 = "source=ja&target=ja&text=" + text;
+                String postParms = "source=en&target=ja&text=" + text;
+                String postParms1_1 = "source=ko&target=ko&text=" + text;
+                String postParms1_2 = "source=ko&target=en&text=" + text;
+                String postParms1_3 = "source=ko&target=ja&text=" + text;
+                String postParms2_1 = "source=en&target=ko&text=" + text;
+                String postParms2_2 = "source=en&target=en&text=" + text;
+                String postParms2_3 = "source=en&target=ja&text=" + text;
+                String postParms3_1 = "source=ja&target=ko&text=" + text;
+                String postParms3_2 = "source=ja&target=en&text=" + text;
+                String postParms3_3 = "source=ja&target=ja&text=" + text;
                 con.setDoOutput(true);
                 DataOutputStream wr = new DataOutputStream(con.getOutputStream());
-                if(sourceLang==1){
-                    if(targetLang==1){
+                if (sourceLang == 1) {
+                    if (targetLang == 1) {
                         wr.writeBytes(postParms1_1);
-                    }
-                    else if(targetLang==2){
+                    } else if (targetLang == 2) {
                         wr.writeBytes(postParms1_2);
-                    }
-                    else if(targetLang==3){
+                    } else if (targetLang == 3) {
                         wr.writeBytes(postParms1_3);
                     }
-                }
-                else if(sourceLang==2){
-                    if(targetLang==1){
+                } else if (sourceLang == 2) {
+                    if (targetLang == 1) {
                         wr.writeBytes(postParms2_1);
-                    }
-                    else if(targetLang==2){
+                    } else if (targetLang == 2) {
                         wr.writeBytes(postParms2_2);
-                    }
-                    else if(targetLang==3){
+                    } else if (targetLang == 3) {
                         wr.writeBytes(postParms2_3);
                     }
-                }
-                else if(sourceLang==3){
-                    if(targetLang==1){
+                } else if (sourceLang == 3) {
+                    if (targetLang == 1) {
                         wr.writeBytes(postParms3_1);
-                    }
-                    else if(targetLang==2){
+                    } else if (targetLang == 2) {
                         wr.writeBytes(postParms3_2);
-                    }
-                    else if(targetLang==3){
+                    } else if (targetLang == 3) {
                         wr.writeBytes(postParms3_3);
                     }
                 }
@@ -171,12 +174,12 @@ public class Translate extends AppCompatActivity {
 
         }
 
-        protected void onPostExecute(Integer a){
-            JsonParser parser =new JsonParser();
+        protected void onPostExecute(Integer a) {
+            JsonParser parser = new JsonParser();
             JsonElement element = parser.parse(result);
-            if(element.getAsJsonObject().get("errorMessage")!=null){
-                Log.e("번역 오류","번역 오류가 발생했습니다."+"오류 코드:"+element.getAsJsonObject().get("errorCode").getAsString()+"]");
-            }else if(element.getAsJsonObject().get("message")!=null){
+            if (element.getAsJsonObject().get("errorMessage") != null) {
+                Log.e("번역 오류", "번역 오류가 발생했습니다." + "오류 코드:" + element.getAsJsonObject().get("errorCode").getAsString() + "]");
+            } else if (element.getAsJsonObject().get("message") != null) {
                 //번역 결과 출력
                 resultText.setText(element.getAsJsonObject().get("message").getAsJsonObject().get("result")
                         .getAsJsonObject().get("translatedText").getAsString());
@@ -184,8 +187,9 @@ public class Translate extends AppCompatActivity {
 
         }
     }
+
     @Override
-    protected  void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_translate);
 
@@ -202,5 +206,24 @@ public class Translate extends AppCompatActivity {
          */
     }
 
+    public void onMove(View view) {
+        Intent intent = null;
+        switch (view.getId()) {
+            case R.id.Forum_btn:
+                break;
+            case R.id.Setting_btn:
+                intent = new Intent(Translate.this, Setting.class);
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.Home_btn:
+                intent = new Intent(Translate.this, Home.class);
+                startActivity(intent);
+                finish();
+            default:
+                return;
+        }
 
+
+    }
 }

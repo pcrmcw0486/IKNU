@@ -90,6 +90,9 @@
         android:id="@+id/forum_listView"
         android:layout_width="406dp"
         android:layout_height="514dp"
+        android:background="@color/colorWhite"
+        android:divider="#000000"
+        android:dividerHeight="4dp"
         android:layout_marginBottom="56dp"
         app:layout_constraintBottom_toBottomOf="@+id/Forum_btn"
         app:layout_constraintStart_toStartOf="parent" />

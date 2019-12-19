@@ -19,6 +19,7 @@ import android.text.Layout;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -121,7 +122,7 @@ public class Map_Navi extends AppCompatActivity implements TextWatcher, OnMapRea
             markerOptions.position(userPosition);
             mMap.addMarker(markerOptions);
             mMap.moveCamera(CameraUpdateFactory.newLatLng(userPosition));
-            mMap.animateCamera(CameraUpdateFactory.zoomTo(12));
+            mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
         }
         recyclerView.bringToFront();
     }
@@ -154,7 +155,11 @@ public class Map_Navi extends AppCompatActivity implements TextWatcher, OnMapRea
         markerOptions.snippet(building);
         mMap.addMarker(markerOptions);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(POSITION));
-        mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(17));
+        if(view !=null){
+            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(),0);
+        }
     }
 
     public void MyPosition(View view) {
@@ -169,7 +174,7 @@ public class Map_Navi extends AppCompatActivity implements TextWatcher, OnMapRea
             markerOptions.title("내위치");
             markerOptions.snippet("내위치");
             mMap.moveCamera(CameraUpdateFactory.newLatLng(userPosition));
-            mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
+            mMap.animateCamera(CameraUpdateFactory.zoomTo(17));
         }
         recyclerView.bringToFront();
     }
@@ -184,7 +189,7 @@ public class Map_Navi extends AppCompatActivity implements TextWatcher, OnMapRea
             getMyLocation(); //이건 써도되고 안써도 되지만, 전 권한 승인하면 즉시 위치값 받아오려고 썼습니다!
         }
         else {
-           // System.out.println("////////////권한요청 안해도됨");
+            // System.out.println("////////////권한요청 안해도됨");
 
             // 수동으로 위치 구하기
             String locationProvider = LocationManager.GPS_PROVIDER;
@@ -197,11 +202,11 @@ public class Map_Navi extends AppCompatActivity implements TextWatcher, OnMapRea
         return currentLocation;
 
 
-       // 출처: https://vvh-avv.tistory.com/138 [정리잘하고싶다]
+        // 출처: https://vvh-avv.tistory.com/138 [정리잘하고싶다]
     }
 
     public void onMove(View view) {
-       Intent intent = null;
+        Intent intent = null;
         switch (view.getId())
         {
             case R.id.Forum_btn :

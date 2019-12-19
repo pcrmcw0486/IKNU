@@ -447,6 +447,7 @@ color colorBlue
 color colorGray
 color colorPrimary
 color colorPrimaryDark
+color colorRed
 color colorWhite
 color common_google_signin_btn_text_dark
 color common_google_signin_btn_text_dark_default
@@ -715,6 +716,7 @@ drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable arrow
+drawable back
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -779,6 +781,7 @@ id CTRL
 id FUNCTION
 id Forum_Type
 id Forum_btn
+id GotoTranslate
 id Home_btn
 id Language1
 id Language2
@@ -795,6 +798,7 @@ id Sign_up_Age
 id Sign_up_ID
 id Sign_up_Name
 id Sign_up_PW
+id Sign_up_PW2
 id Sign_up_StudentID
 id Text_Title
 id Text_context
@@ -928,6 +932,7 @@ id icon_group
 id icon_only
 id ifRoom
 id image
+id imageButton
 id imageView
 id imageView2
 id imageView7
@@ -1279,6 +1284,7 @@ string format_age
 string format_email
 string format_name
 string format_password
+string format_passwordre
 string gcm_defaultSenderId
 string google_api_key
 string google_app_id
@@ -1288,8 +1294,11 @@ string internship
 string lecture_name
 string news
 string password
+string passwordCheck
+string passwordText
 string professor_name
 string project_id
+string recogSound
 string request_email_validation
 string search
 string search_menu_title
@@ -1301,6 +1310,7 @@ string status_bar_notification_info_overflow
 string success_login
 string success_signup
 string time
+string transplateStart
 string 언어
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light

@@ -2,6 +2,8 @@
     <string name="app_name">iknu</string>
     <string name="email">イーメール</string>
     <string name="password"> パスワード</string>
+    <string name="passwordCheck">パスワード 再確認</string>
+    <string name="passwordText">(8文字以上特殊文字は除外)</string>
 
     <string name="signin">ログイン</string>
     <string name="success_login">ログイン成功しました。</string>
@@ -14,7 +16,7 @@
     <string name="request_email_validation">メール認証をしてください</string>
     <string name="format_email">メール形式がとれないです。</string>
     <string name="format_password">パスワード形式がとれないです。</string>
-
+    <string name="format_passwordre">パスワードが一致しません。</string>
     <string name="format_name">名前を10席の中に入力してください。</string>
     <string name="format_age">年が正しくありません。</string>
     <string name="send_email">メール発送完了!</string>
@@ -33,19 +35,21 @@
     <string name="Email">メール </string>
     <string name="Complete">完了</string>
     <string name="Back">後ろに</string>
-    <string name="Prompt1">会員加入以降にメール認証をしてください 전체듣기</string>
+    <string name="Prompt1">会員加入以降にメール認証をしてください。</string>
     <string name="add_lecture">講義追加</string>
     <string name="professor_name">教授の名前</string>
     <string name="choose_day">日付選択 </string>
     <string name="time">時間</string>
     <string name="lecture_name">講義の名</string>
-    <string name="언어">言語</string>
+    <string name="언어">言語変更</string>
     //추가
-    <string name="choose_forum_type">Choose Forum Type</string>
-    <string name="academics">Academics</string>
-    <string name="internship">Internship</string>
-    <string name="seminar">Seminar</string>
-    <string name="cultural">Cultural</string>
-    <string name="club_activities">Club Activities</string>
-    <string name="news">News</string>
+    <string name="choose_forum_type">形式選択</string>
+    <string name="academics">学会</string>
+    <string name="internship">インターンシップ</string>
+    <string name="seminar">セミナー</string>
+    <string name="cultural">文化</string>
+    <string name="club_activities">サークル活動</string>
+    <string name="news">ニュース</string>
+    <string name="recogSound">音声認識</string>
+    <string name="transplateStart">翻訳実行</string>
 </resources>

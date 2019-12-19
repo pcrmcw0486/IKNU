@@ -29,6 +29,22 @@ public class Forum extends AppCompatActivity {
     }
 
     public void onMove(View view) {
+        Intent intent = null;
+        switch (view.getId()) {
+            case R.id.Forum_btn:
+                break;
+            case R.id.Setting_btn:
+                intent = new Intent(Forum.this, Setting.class);
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.Home_btn:
+                intent = new Intent(Forum.this, Home.class);
+                startActivity(intent);
+                finish();
+            default:
+                return;
+        }
     }
 
     public void MoveForum(View view) {
@@ -38,26 +54,32 @@ public class Forum extends AppCompatActivity {
             case R.id.academy_forum_btn:
                 intent = new Intent(Forum.this, Academy_Forum.class);
                 startActivity(intent);
+                finish();
                 break;
             case R.id.internship_forum_btn :
                 intent = new Intent(Forum.this, InternShip_Forum.class);
                 startActivity(intent);
+                finish();
                 break;
             case R.id.seminar_forum_btn :
                 intent = new Intent(Forum.this, SEMINAR_Forum.class);
                 startActivity(intent);
+                finish();
                 break;
             case R.id.cultural_forum_btn :
                 intent = new Intent(Forum.this, Cultural_Forum.class);
                 startActivity(intent);
+                finish();
                 break;
             case R.id.club_activity_forum_btn :
                 intent = new Intent(Forum.this, ClubActivity_Forum.class);
                 startActivity(intent);
+                finish();
                 break;
             case R.id.news_forum_btn :
                 intent = new Intent(Forum.this, News_Forum.class);
                 startActivity(intent);
+                finish();
                 break;
         }
     }

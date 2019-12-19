@@ -89,6 +89,7 @@ public class ClubActivity_Forum extends AppCompatActivity {
                 intent.putExtra("documentID", textID.get(position));
                 intent.putExtra("documentName", "ClubActivity");
                 startActivity(intent);
+                finish();
             }
         });
     }

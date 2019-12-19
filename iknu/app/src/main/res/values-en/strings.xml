@@ -1,51 +1,55 @@
 <resources>
-    <string name="app_name">iknu</string>
-    <string name="email">E-mail</string>
-    <string name="password">Password</string>
+        <string name="app_name">iknu</string>
+        <string name="email">E-mail</string>
+        <string name="password">Password</string>
+        <string name="passwordCheck">Re-enter password</string>
+        <string name="passwordText">(Excluding special characters with 8 or more characters)</string>
 
-    <string name="signin">Login</string>
-    <string name="success_login">Success_Login</string>
-    <string name="failed_login">Failed_Login</string>
+        <string name="signin">Login</string>
+        <string name="success_login">Success_Login</string>
+        <string name="failed_login">Failed_Login</string>
 
-    <string name="signup">Signup</string>
-    <string name="success_signup">Success in sign up</string>
-    <string name="failed_signup">Failed to sign up</string>
-    <string name="day">Choose Lecture Day</string>
-    <string name="request_email_validation">Validate your email!</string>
-    <string name="format_email">Incorrect E-mail format</string>
-    <string name="format_password">Incorrect Password format(over 8)</string>
-
-    <string name="format_name">Typing name in 10</string>
-    <string name="format_age">Incorrect Age</string>
-    <string name="send_email">Complete sending email!</string>
-    <!--> 한국어 번역기 part <-->
-    <string name="Language1">Korean</string>
-    <string name="Language2">English</string>
-    <string name="Language3">Japanese</string>
-    <string name="Translator">파파고 번역기</string>
-    <string name="EditTextHint">Write to translate</string>
-    <string name="search">Search</string>
-    <string name="MyPosition">MyPosition</string>
-    <string name="Log_Out">Logout</string>
-    <string name="Name">Name</string>
-    <string name="StudentId">StudentID</string>
-    <string name="Age">Age</string>
-    <string name="Email">E-mail</string>
-    <string name="Complete">Complete</string>
-    <string name="Back">Back</string>
-    <string name="Prompt1">validate E-mail after sign up</string>
-    <string name="add_lecture">add_lecture</string>
-    <string name="professor_name">professor_name</string>
-    <string name="choose_day">choose_day</string>
-    <string name="time">time</string>
-    <string name="lecture_name">lecture_name</string>
-    <string name="언어">Language</string>
+        <string name="signup">Signup</string>
+        <string name="success_signup">Success in sign up</string>
+        <string name="failed_signup">Failed to sign up</string>
+        <string name="day">Choose Lecture Day</string>
+        <string name="request_email_validation">Validate your email!</string>
+        <string name="format_email">Incorrect E-mail format</string>
+        <string name="format_password">Incorrect Password format(over 8)</string>
+      <string name="format_passwordre">Passwords do not match. </string>
+        <string name="format_name">Typing name in 10</string>
+        <string name="format_age">Incorrect Age</string>
+        <string name="send_email">Complete sending email!</string>
+        <!--> 한국어 번역기 part <-->
+        <string name="Language1">Korean</string>
+        <string name="Language2">English</string>
+        <string name="Language3">Japanese</string>
+        <string name="Translator">PaPago Translator</string>
+        <string name="EditTextHint">Write to translate</string>
+        <string name="search">Search</string>
+        <string name="MyPosition">MyPosition</string>
+        <string name="Log_Out">Logout</string>
+        <string name="Name">Name</string>
+        <string name="StudentId">StudentID</string>
+        <string name="Age">Age</string>
+        <string name="Email">E-mail</string>
+        <string name="Complete">Complete</string>
+        <string name="Back">Back</string>
+        <string name="Prompt1">validate E-mail after sign up</string>
+        <string name="add_lecture">add_lecture</string>
+        <string name="professor_name">professor_name</string>
+        <string name="choose_day">choose_day</string>
+        <string name="time">time</string>
+        <string name="lecture_name">lecture_name</string>
+        <string name="언어">Language Setting</string>
     //추가
-    <string name="choose_forum_type">Choose Forum Type</string>
+    <string name="choose_forum_type">Choose Board Type</string>
     <string name="academics">Academics</string>
     <string name="internship">Internship</string>
     <string name="seminar">Seminar</string>
     <string name="cultural">Cultural</string>
     <string name="club_activities">Club Activities</string>
     <string name="news">News</string>
+    <string name="recogSound">voice recognition</string>
+    <string name="transplateStart">transplate</string>
 </resources>

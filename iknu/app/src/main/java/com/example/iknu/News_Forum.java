@@ -88,6 +88,7 @@ public class News_Forum extends AppCompatActivity {
                 intent.putExtra("documentID", textID.get(position));
                 intent.putExtra("documentName", "News");
                 startActivity(intent);
+                finish();
             }
         });
     }

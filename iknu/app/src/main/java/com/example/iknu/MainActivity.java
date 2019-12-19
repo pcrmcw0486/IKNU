@@ -3,11 +3,14 @@ package com.example.iknu;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.text.InputType;
 import android.util.Patterns;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -20,7 +23,6 @@ import com.google.firebase.auth.FirebaseUser;
 import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity {
-
     // 비밀번호 정규식
     private static final Pattern PASSWORD_PATTERN = Pattern.compile("^[a-zA-Z0-9!@.#$%^&*?_~]{4,16}$");
 
@@ -30,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     // 이메일과 비밀번호
     private EditText editTextEmail;
     private EditText editTextPassword;
+
 
     private String email = "";
     private String password = "";
@@ -43,13 +46,14 @@ public class MainActivity extends AppCompatActivity {
         editTextEmail = findViewById(R.id.edit_email);
         editTextPassword = findViewById(R.id.edit_password);
         editTextPassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+
     }
 
     @Override
     protected void onStart() {
         super.onStart();
         //현재 유저가 로그인 되어 있는지 확인한다.
-       FirebaseUser currentUser = firebaseAuth.getCurrentUser();
+        FirebaseUser currentUser = firebaseAuth.getCurrentUser();
         if(currentUser != null)
         {
             Intent Home_Intent = new Intent(this, Home.class);
@@ -59,20 +63,25 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void singUp(View view) {
-      Intent Signup_Intent = new Intent(this, Signup.class);
-      startActivity(Signup_Intent);
+        Intent Signup_Intent = new Intent(this, Signup.class);
+        startActivity(Signup_Intent);
     }
 
     public void LogIn(View view) {
         email = editTextEmail.getText().toString();
         password = editTextPassword.getText().toString();
-
+        if(view !=null){
+            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(),0);
+        }
         if(isValidEmail() && isValidPasswd()) {
             loginUser(email, password);
         }
 
-        else
-            Toast.makeText(this, R.string.failed_login, Toast.LENGTH_SHORT).show();
+        else{
+            editTextEmail.setText("");
+            editTextPassword.setText("");
+            Toast.makeText(this, R.string.failed_login, Toast.LENGTH_SHORT).show();}
     }
     // 이메일 유효성 검사
     private boolean isValidEmail() {
@@ -104,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
         //회원가입 페이지로 넘어감.
         Intent intent = new Intent(MainActivity.this, Signup.class);
         startActivity(intent);
+        finish();
     }
     // 로그인
     private void loginUser(String email, String password)
@@ -133,5 +143,9 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
-
+    /*
+    public void setLoginState(int n){
+        this.signupLogin=n;
+    }
+     */
 }

@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
     tools:context=".Academy_Forum">
 
     <ImageView
@@ -68,8 +67,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="572dp"
-        android:onClick="onMove"
         android:text="newWriting"
+        android:onClick="onMove"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -89,7 +88,10 @@
 
     <ListView
         android:id="@+id/forum_listView"
+        android:background="@color/colorWhite"
         android:layout_width="406dp"
+        android:divider="#000000"
+        android:dividerHeight="4dp"
         android:layout_height="514dp"
         android:layout_marginBottom="56dp"
         app:layout_constraintBottom_toBottomOf="@+id/Forum_btn"

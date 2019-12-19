@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
     tools:context=".NewWrite_Forum">
 
     <ImageView
@@ -67,6 +66,10 @@
         android:id="@+id/Write_Title"
         android:layout_width="361dp"
         android:layout_height="44dp"
+        android:background="@color/colorWhite"
+        android:textColor="@color/colorBlack"
+        android:textColorHint="@color/colorGray"
+        android:hint="Title"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="512dp"
         android:ems="10"
@@ -79,7 +82,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:textColor="@color/colorBlack"
+        android:textColorHint="@color/colorGray"
         android:layout_marginBottom="14dp"
+        android:background="@color/colorWhite"
         android:ems="10"
         android:hint="Name"
         android:inputType="textPersonName"
@@ -93,6 +99,9 @@
         android:layout_width="357dp"
         android:layout_height="370dp"
         android:layout_marginStart="16dp"
+        android:textColorHint="@color/colorGray"
+        android:background="@color/colorWhite"
+        android:textColor="@color/colorBlack"
         android:layout_marginBottom="64dp"
         android:ems="10"
         android:hint="Text"
@@ -115,6 +124,7 @@
         android:id="@+id/Forum_Type"
         android:layout_width="match_parent"
         android:layout_height="31dp"
+       android:gravity="right"
         android:layout_marginBottom="580dp"
         android:prompt="@string/choose_forum_type"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -126,6 +136,10 @@
         android:layout_height="34dp"
         android:layout_marginBottom="1dp"
         android:text="@string/choose_forum_type"
+        android:gravity="right"
+        android:textColor="@color/colorWhite"
+        android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/Forum_Type"
         app:layout_constraintStart_toStartOf="parent" />
 

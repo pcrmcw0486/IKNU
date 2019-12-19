@@ -42,6 +42,14 @@ public class LanguageChange extends AppCompatActivity {
         config = new Configuration();
         config.locale = locale;
         getResources().updateConfiguration(config, null);
+        Intent intent = new Intent( LanguageChange.this, Setting.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void onMove(View view) {
+        Intent intent = new Intent( LanguageChange.this, Setting.class);
+        startActivity(intent);
         finish();
     }
 
