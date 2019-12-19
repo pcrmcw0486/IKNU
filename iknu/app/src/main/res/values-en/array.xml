@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="day">
+        <item>Monday</item>;
+        <item>Tuesday</item>;
+        <item>Wendseday</item>;
+        <item>Thursday</item>;
+        <item>Firday</item>;
+        <item>Saturday</item>;
+        <item>Sunday</item>;
+
+    </string-array>
+</resources>

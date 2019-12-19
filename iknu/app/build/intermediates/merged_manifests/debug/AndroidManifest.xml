@@ -31,6 +31,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.AppCompat.NoActionBar" >
+        <activity android:name="com.example.iknu.LanguageChange" />
         <activity android:name="com.example.iknu.Setting" />
         <activity
             android:name="com.example.iknu.Translate"

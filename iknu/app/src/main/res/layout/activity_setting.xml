@@ -69,12 +69,24 @@
         android:layout_height="46dp"
         android:layout_marginTop="53dp"
         android:layout_marginBottom="600dp"
-        android:text="@string/Log_Out"
         android:onClick="ViewClick"
+        android:text="@string/Log_Out"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
         app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/Languagechange"
+        android:layout_width="406dp"
+        android:layout_height="59dp"
+        android:layout_marginBottom="208dp"
+        android:onClick="languageChange"
+        android:text="@string/언어"
+        app:layout_constraintBottom_toTopOf="@+id/imageView7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

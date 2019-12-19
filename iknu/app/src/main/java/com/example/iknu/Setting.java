@@ -3,10 +3,13 @@ package com.example.iknu;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.Locale;
 
 public class Setting extends AppCompatActivity {
 
@@ -39,5 +42,10 @@ public class Setting extends AppCompatActivity {
         Intent intent = new Intent(Setting.this, MainActivity.class);
         startActivity(intent);
         finish();
+    }
+
+    public void languageChange(View view) {
+        Intent intent = new Intent(Setting.this, LanguageChange.class);
+        startActivity(intent);
     }
 }

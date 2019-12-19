@@ -83,7 +83,7 @@ public class Map_Navi extends AppCompatActivity implements TextWatcher, OnMapRea
                         items.add(document.getId());
                         Lat.add(Float.valueOf(document.getData().get("Lat").toString()));
                         Long.add(Float.valueOf(document.getData().get("Long").toString()));
-                        //Log.i("TAG", document.getId() + " => " + document.getData().get("Lang").toString());
+                        Log.i("TAG", document.getId() + " => " + document.getData().get("Long").toString());
                     }
                 }
             }
