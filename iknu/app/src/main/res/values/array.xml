@@ -10,4 +10,12 @@
         <item>Sunday</item>;
 
     </string-array>
+
+    <string-array name = "forum_type">
+        <item>AcademyForum</item>
+        <item>CULTURAL</item>
+        <item>ClubActivity</item>
+        <item>InternShip</item>
+        <item>SEMINAR</item>
+    </string-array>
 </resources>

@@ -24,6 +24,7 @@ anim btn_radio_to_on_mtrl_dot_group_animation
 anim btn_radio_to_on_mtrl_ring_outer_animation
 anim btn_radio_to_on_mtrl_ring_outer_path_animation
 array day
+array forum_type
 attr actionBarDivider
 attr actionBarItemBackground
 attr actionBarPopupTheme
@@ -776,6 +777,7 @@ id ButtonSourceLang
 id ButtonTargetLang
 id CTRL
 id FUNCTION
+id Forum_Type
 id Forum_btn
 id Home_btn
 id Language1
@@ -787,12 +789,19 @@ id Map_Navi_parent
 id Myposition
 id SHIFT
 id SYM
+id Send_btn
 id Setting_btn
 id Sign_up_Age
 id Sign_up_ID
 id Sign_up_Name
 id Sign_up_PW
 id Sign_up_StudentID
+id Text_Title
+id Text_writer
+id Write_Name
+id Write_Text
+id Write_Title
+id academy_forum_btn
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
 id accessibility_custom_action_1
@@ -858,6 +867,7 @@ id beginning
 id blocking
 id bottom
 id bt_translate
+id btn1
 id btn_signIn
 id btn_signUp
 id button
@@ -868,9 +878,11 @@ id chains
 id checkbox
 id checked
 id chronometer
+id club_activity_forum_btn
 id collapseActionView
 id content
 id contentPanel
+id cultural_forum_btn
 id custom
 id customPanel
 id dark
@@ -890,6 +902,7 @@ id et_source
 id expand_activities_button
 id expanded_menu
 id forever
+id forum_listView
 id friday0
 id friday1
 id friday10
@@ -919,6 +932,7 @@ id imageView
 id imageView2
 id imageView7
 id info
+id internship_forum_btn
 id invisible
 id italic
 id item_touch_helper_previous_elevation
@@ -929,6 +943,7 @@ id line1
 id line3
 id listMode
 id list_item
+id makeText
 id mapView
 id map_btn
 id message
@@ -949,6 +964,7 @@ id monday8
 id monday9
 id multiply
 id never
+id news_forum_btn
 id none
 id normal
 id notification_background
@@ -998,6 +1014,7 @@ id search_plate
 id search_src_text
 id search_voice_btn
 id select_dialog_listview
+id seminar_forum_btn
 id shortcut
 id showCustom
 id showHome
@@ -1042,12 +1059,14 @@ id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textView
+id textView12
 id textView2
 id textView3
 id textView4
 id textView5
 id textView6
 id textView7
+id textView8
 id textview
 id thursday0
 id thursday1
@@ -1152,10 +1171,14 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_academy__forum
+layout activity_forum
+layout activity_forum__view
 layout activity_home
 layout activity_language_change
 layout activity_main
 layout activity_map__navi
+layout activity_new_write__forum
 layout activity_recycle_view_adapter
 layout activity_setting
 layout activity_signup
@@ -1219,6 +1242,7 @@ string abc_toolbar_collapse_description
 string add_lecture
 string app_name
 string choose_day
+string choose_forum_type
 string common_google_play_services_enable_button
 string common_google_play_services_enable_text
 string common_google_play_services_enable_title

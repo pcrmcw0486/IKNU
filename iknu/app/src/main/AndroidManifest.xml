@@ -13,7 +13,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".LanguageChange"></activity>
+        <activity android:name=".NewWrite_Forum"></activity>
+        <activity android:name=".Forum_View" />
+        <activity android:name=".Academy_Forum" />
+        <activity android:name=".Forum" />
+        <activity android:name=".LanguageChange" />
         <activity android:name=".Setting" />
         <activity
             android:name=".Translate"
