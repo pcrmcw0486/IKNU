@@ -31,6 +31,11 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.AppCompat.NoActionBar" >
+        <activity android:name="com.example.iknu.SEMINAR_Forum" />
+        <activity android:name="com.example.iknu.News_Forum" />
+        <activity android:name="com.example.iknu.InternShip_Forum" />
+        <activity android:name="com.example.iknu.ClubActivity_Forum" />
+        <activity android:name="com.example.iknu.Cultural_Forum" />
         <activity android:name="com.example.iknu.NewWrite_Forum" />
         <activity android:name="com.example.iknu.Forum_View" />
         <activity android:name="com.example.iknu.Academy_Forum" />

@@ -13,7 +13,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".NewWrite_Forum"></activity>
+        <activity android:name=".SEMINAR_Forum"></activity>
+        <activity android:name=".News_Forum" />
+        <activity android:name=".InternShip_Forum" />
+        <activity android:name=".ClubActivity_Forum" />
+        <activity android:name=".Cultural_Forum" />
+        <activity android:name=".NewWrite_Forum" />
         <activity android:name=".Forum_View" />
         <activity android:name=".Academy_Forum" />
         <activity android:name=".Forum" />

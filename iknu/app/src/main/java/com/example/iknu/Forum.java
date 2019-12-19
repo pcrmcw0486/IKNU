@@ -39,6 +39,26 @@ public class Forum extends AppCompatActivity {
                 intent = new Intent(Forum.this, Academy_Forum.class);
                 startActivity(intent);
                 break;
+            case R.id.internship_forum_btn :
+                intent = new Intent(Forum.this, InternShip_Forum.class);
+                startActivity(intent);
+                break;
+            case R.id.seminar_forum_btn :
+                intent = new Intent(Forum.this, SEMINAR_Forum.class);
+                startActivity(intent);
+                break;
+            case R.id.cultural_forum_btn :
+                intent = new Intent(Forum.this, Cultural_Forum.class);
+                startActivity(intent);
+                break;
+            case R.id.club_activity_forum_btn :
+                intent = new Intent(Forum.this, ClubActivity_Forum.class);
+                startActivity(intent);
+                break;
+            case R.id.news_forum_btn :
+                intent = new Intent(Forum.this, News_Forum.class);
+                startActivity(intent);
+                break;
         }
     }
 

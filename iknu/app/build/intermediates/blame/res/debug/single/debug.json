@@ -740,6 +740,10 @@
         "source": "C:\\Users\\Gogi\\.gradle\\caches\\transforms-2\\files-2.1\\383837a1f189d10df3511e6927171459\\appcompat-1.1.0\\res\\color-v23\\abc_tint_switch_track.xml"
     },
     {
+        "merged": "D:\\gitIKNU\\IKNU\\iknu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_news__forum.xml.flat",
+        "source": "D:\\gitIKNU\\IKNU\\iknu\\app\\src\\main\\res\\layout\\activity_news__forum.xml"
+    },
+    {
         "merged": "D:\\gitIKNU\\IKNU\\iknu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_common_google_signin_btn_text_light_normal_background.9.png.flat",
         "source": "C:\\Users\\Gogi\\.gradle\\caches\\transforms-2\\files-2.1\\61050d192d7b40096effddbc75f65a23\\play-services-base-17.0.0\\res\\drawable-mdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png"
     },
@@ -794,6 +798,10 @@
     {
         "merged": "D:\\gitIKNU\\IKNU\\iknu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_text_light_normal.xml.flat",
         "source": "C:\\Users\\Gogi\\.gradle\\caches\\transforms-2\\files-2.1\\61050d192d7b40096effddbc75f65a23\\play-services-base-17.0.0\\res\\drawable\\common_google_signin_btn_text_light_normal.xml"
+    },
+    {
+        "merged": "D:\\gitIKNU\\IKNU\\iknu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_intern_ship__forum.xml.flat",
+        "source": "D:\\gitIKNU\\IKNU\\iknu\\app\\src\\main\\res\\layout\\activity_intern_ship__forum.xml"
     },
     {
         "merged": "D:\\gitIKNU\\IKNU\\iknu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xhdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
@@ -1540,6 +1548,10 @@
         "source": "C:\\Users\\Gogi\\.gradle\\caches\\transforms-2\\files-2.1\\383837a1f189d10df3511e6927171459\\appcompat-1.1.0\\res\\drawable-xxhdpi-v4\\abc_list_selector_disabled_holo_dark.9.png"
     },
     {
+        "merged": "D:\\gitIKNU\\IKNU\\iknu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_seminar__forum.xml.flat",
+        "source": "D:\\gitIKNU\\IKNU\\iknu\\app\\src\\main\\res\\layout\\activity_seminar__forum.xml"
+    },
+    {
         "merged": "D:\\gitIKNU\\IKNU\\iknu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_list_longpressed_holo.9.png.flat",
         "source": "C:\\Users\\Gogi\\.gradle\\caches\\transforms-2\\files-2.1\\383837a1f189d10df3511e6927171459\\appcompat-1.1.0\\res\\drawable-mdpi-v4\\abc_list_longpressed_holo.9.png"
     },
@@ -1610,6 +1622,10 @@
     {
         "merged": "D:\\gitIKNU\\IKNU\\iknu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_common_google_signin_btn_text_dark_normal_background.9.png.flat",
         "source": "C:\\Users\\Gogi\\.gradle\\caches\\transforms-2\\files-2.1\\61050d192d7b40096effddbc75f65a23\\play-services-base-17.0.0\\res\\drawable-xhdpi-v4\\common_google_signin_btn_text_dark_normal_background.9.png"
+    },
+    {
+        "merged": "D:\\gitIKNU\\IKNU\\iknu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_cultural__forum.xml.flat",
+        "source": "D:\\gitIKNU\\IKNU\\iknu\\app\\src\\main\\res\\layout\\activity_cultural__forum.xml"
     },
     {
         "merged": "D:\\gitIKNU\\IKNU\\iknu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
@@ -1838,6 +1854,10 @@
     {
         "merged": "D:\\gitIKNU\\IKNU\\iknu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_text_dark.xml.flat",
         "source": "C:\\Users\\Gogi\\.gradle\\caches\\transforms-2\\files-2.1\\61050d192d7b40096effddbc75f65a23\\play-services-base-17.0.0\\res\\drawable\\common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "D:\\gitIKNU\\IKNU\\iknu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_club__forum.xml.flat",
+        "source": "D:\\gitIKNU\\IKNU\\iknu\\app\\src\\main\\res\\layout\\activity_club__forum.xml"
     },
     {
         "merged": "D:\\gitIKNU\\IKNU\\iknu\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",

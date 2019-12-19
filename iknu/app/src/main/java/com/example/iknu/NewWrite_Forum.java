@@ -3,17 +3,21 @@ package com.example.iknu;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -23,11 +27,11 @@ import java.util.Map;
 
 public class NewWrite_Forum extends AppCompatActivity {
 
-    TextView title;
-    TextView name;
-    TextView text;
+    EditText title;
+    EditText name;
+    EditText text;
     String UID;
-    String Collcetion = "AcademyForum";
+    String Collcetions = "AcademyForum";
     FirebaseAuth mAuth;
     FirebaseFirestore db;
     Map<String, Object> input_text = new HashMap<>();
@@ -36,17 +40,32 @@ public class NewWrite_Forum extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_write__forum);
 
+        title = (EditText)findViewById(R.id.Write_Title);
+        name = (EditText)findViewById(R.id.Write_Name);
+        text = (EditText)findViewById(R.id.Write_Text);
+
         Spinner spinner = (Spinner)findViewById(R.id.Forum_Type);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.forum_type,android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
-        spinner.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Collcetion = parent.getItemAtPosition(position).toString();
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Collcetions = parent.getItemAtPosition(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
             }
         });
-        mAuth.getInstance();
+     /*   spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Collcetion = parent.getItemAtPosition(position).toString();
+            }
+        });*/
+        mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
         UID = mAuth.getCurrentUser().getUid();
     }
@@ -59,12 +78,13 @@ public class NewWrite_Forum extends AppCompatActivity {
         input_text.put("context", text.getText().toString());
         input_text.put("name",name.getText().toString());
         input_text.put("title", title.getText().toString());
-        db.collection(Collcetion)
+        db.collection(Collcetions)
                 .add(input_text)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
-                        Log.d("TAG","Document snapshot addded with ID : " + documentReference.getId());
+                        Toast.makeText(NewWrite_Forum.this, "Write Success", Toast.LENGTH_SHORT).show();
+                        finish();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {

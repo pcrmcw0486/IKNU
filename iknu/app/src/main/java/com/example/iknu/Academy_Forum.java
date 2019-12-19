@@ -39,7 +39,8 @@ public class Academy_Forum extends AppCompatActivity {
                 .setTimestampsInSnapshotsEnabled(true)
                 .build();
         mdb.setFirestoreSettings(settings);
-        mdb = FirebaseFirestore.getInstance();
+        listView = (ListView)findViewById(R.id.forum_listView);
+
         /*
         *  db.collection("Location").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
@@ -58,7 +59,7 @@ public class Academy_Forum extends AppCompatActivity {
         });*/
 
         mdb.collection("AcademyForum").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-            @Override
+          @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if(task.isSuccessful())
                 {
@@ -75,9 +76,10 @@ public class Academy_Forum extends AppCompatActivity {
                         map.put("name",t.name);
                         mapList.add(map);
                     }
-                    listView = (ListView)findViewById(R.id.forum_listView);
+
                     SimpleAdapter adapter = new SimpleAdapter(getApplicationContext(), mapList, android.R.layout.simple_list_item_2, new String[]{"title","name"}, new int[]{android.R.id.text1,android.R.id.text2});
                     listView.setAdapter(adapter);
+                    Toast.makeText(Academy_Forum.this,"!!",Toast.LENGTH_SHORT).show();
                 }
                 else
                     Toast.makeText(Academy_Forum.this, "?!?!?!", Toast.LENGTH_SHORT).show();
@@ -95,6 +97,30 @@ public class Academy_Forum extends AppCompatActivity {
     }
 
     public void onMove(View view) {
+        Intent intent = null;
+        switch (view.getId())
+        {
+            case R.id.Forum_btn :
+                intent = new Intent(Academy_Forum.this, Forum.class);
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.Setting_btn :
+                intent = new Intent(Academy_Forum.this, Setting.class);
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.Home_btn :
+                intent = new Intent(Academy_Forum.this, Home.class);
+                startActivity(intent);
+                finish();
+            case R.id.makeText :
+                intent = new Intent(Academy_Forum.this, NewWrite_Forum.class);
+                startActivity(intent);
+                finish();
+            default:
+                return;
+        }
     }
 
     class Text

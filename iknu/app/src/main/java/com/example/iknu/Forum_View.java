@@ -16,7 +16,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Forum_View extends AppCompatActivity {
 
-    Intent intent = new Intent(this.getIntent());
+    Intent intent;
     String documentID;
     String CollectionName;
     TextView title;
@@ -27,12 +27,13 @@ public class Forum_View extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        intent = new Intent(this.getIntent());
         setContentView(R.layout.activity_forum__view);
         documentID = intent.getStringExtra("documentID");
         CollectionName = intent.getStringExtra("documentName");
         title = (TextView)findViewById(R.id.Text_Title);
         writer = (TextView)findViewById(R.id.Text_writer);
-        context = (TextView)findViewById(R.id.Forum_Type);
+        context = (TextView)findViewById(R.id.Text_context);
         type = (TextView)findViewById(R.id.Forum_Type);
         type.setText(CollectionName);
         db = FirebaseFirestore.getInstance();
@@ -56,5 +57,23 @@ public class Forum_View extends AppCompatActivity {
     }
 
     public void onMove(View view) {
+        Intent intent = null;
+        switch (view.getId())
+        {
+            case R.id.Forum_btn :
+                break;
+            case R.id.Setting_btn :
+                intent = new Intent(Forum_View.this, Setting.class);
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.Home_btn :
+                intent = new Intent(Forum_View.this, Home.class);
+                startActivity(intent);
+                finish();
+
+            default:
+                return;
+        }
     }
 }

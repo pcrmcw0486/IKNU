@@ -73,7 +73,7 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
-        android:id="@+id/btn1"
+        android:id="@+id/new_Write"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_below="@+id/textView"

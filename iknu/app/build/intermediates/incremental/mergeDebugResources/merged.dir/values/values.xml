@@ -455,10 +455,12 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with <ns1:g example="Mail" id="application_name">%s</ns1:g></string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
+    <string name="academics">Academics</string>
     <string name="add_lecture">강의 추가</string>
     <string name="app_name">iknu</string>
     <string name="choose_day">날짜 선택</string>
     <string name="choose_forum_type">Choose Forum Type</string>
+    <string name="club_activities">Club Activities</string>
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Enable</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text"><ns1:g id="app_name">%1$s</ns1:g> won\'t work unless you enable Google Play services.</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Enable Google Play services</string>
@@ -477,6 +479,7 @@
     <string name="common_open_on_phone">Open on phone</string>
     <string name="common_signin_button_text">Sign in</string>
     <string name="common_signin_button_text_long">Sign in with Google</string>
+    <string name="cultural">Cultural</string>
     <string name="day">Choose Lecture Day</string>
     <string name="default_web_client_id" translatable="false">613386760872-tojuk3f0a6g103qeo97eobaq6k9mht1o.apps.googleusercontent.com</string>
     <string name="email">이메일</string>
@@ -492,13 +495,16 @@
     <string name="google_app_id" translatable="false">1:613386760872:android:76f4d60de88a243275489d</string>
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyD1QBr3Ox8E9UqSVCWIqfFv2BDuM3cPeXc</string>
     <string name="google_storage_bucket" translatable="false">iknu-1b8de.appspot.com</string>
+    <string name="internship">Internship</string>
     <string name="lecture_name">과목명</string>
+    <string name="news">News</string>
     <string name="password">비밀번호</string>
     <string name="professor_name">교수명</string>
     <string name="project_id" translatable="false">iknu-1b8de</string>
     <string name="request_email_validation">이메일 인증을 하십시오</string>
     <string name="search">검색</string>
     <string name="search_menu_title">Search</string>
+    <string name="seminar">Seminar</string>
     <string name="send_email">메일 발송 완료!</string>
     <string name="signin">로그인</string>
     <string name="signup">회원가입</string>
