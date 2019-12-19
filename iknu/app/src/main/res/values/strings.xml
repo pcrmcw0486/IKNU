@@ -40,6 +40,8 @@
     <string name="time">시간</string>
     <string name="lecture_name">과목명</string>
     <string name="언어">언어</string>
+
+    //추가
     <string name="choose_forum_type">Choose Forum Type</string>
     <string name="academics">Academics</string>
     <string name="internship">Internship</string>

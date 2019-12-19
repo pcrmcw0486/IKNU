@@ -2,7 +2,6 @@ package com.example.iknu;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -30,7 +29,6 @@ public class Translate extends AppCompatActivity {
     private Button translationButton;
     private TextView resultText;
     private String result;
-    private String InputText;
     public int sourceLang=1;   // 1=한국어, 2=영어, 3=일본어,  소스 언어
     public int targetLang=2;   // 1=한국어, 2=영어, 3=일본어,  목표 언어
 
@@ -74,22 +72,12 @@ public class Translate extends AppCompatActivity {
         translationText = (EditText) findViewById(R.id.et_source);
         translationButton = (Button) findViewById(R.id.bt_translate);
         resultText = (TextView) findViewById(R.id.tv_result);
-        InputText = translationText.getText().toString();
-
-        translationButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                new BackgroundTask().execute();
-            }
-        });
-
+        new BackgroundTask().execute();
     }
 
     //백 그라운드에서 파파고 API와 연결하여 번역 결과를 가져옵니다.
     class BackgroundTask extends AsyncTask<Integer, Integer, Integer>{
         protected void onPreExecute(){
-            sourceLang=1;   // 1=한국어, 2=영어, 3=일본어,  소스 언어
-            targetLang=2;   // 1=한국어, 2=영어, 3=일본어,  목표 언어
         }
 
         @Override
@@ -99,7 +87,7 @@ public class Translate extends AppCompatActivity {
             String clientSecret = "L0VzwCnpdw";
             try {
                 //번역문을  UTF-8으로 인코딩합니다.
-                String text = URLEncoder.encode(InputText, "UTF-8");
+                String text = URLEncoder.encode(translationText.getText().toString(), "UTF-8");
                 String apiURL = "https://openapi.naver.com/v1/papago/n2mt";
 
                 //파파고 API와 연결을 수행합니다.
@@ -110,7 +98,7 @@ public class Translate extends AppCompatActivity {
                 con.setRequestProperty("X-Naver-Client-Secret", clientSecret);
 
                 // 번역할 문장을 파라미터로 전송합니다.
-                String  postParms    = "source=ko&target=en&text=" + text;
+                String  postParms    = "source=en&target=ja&text=" + text;
                 String  postParms1_1 = "source=ko&target=ko&text=" + text;
                 String  postParms1_2 = "source=ko&target=en&text=" + text;
                 String  postParms1_3 = "source=ko&target=ja&text=" + text;
@@ -122,28 +110,40 @@ public class Translate extends AppCompatActivity {
                 String  postParms3_3 = "source=ja&target=ja&text=" + text;
                 con.setDoOutput(true);
                 DataOutputStream wr = new DataOutputStream(con.getOutputStream());
-                /*
-                switch (sourceLang){
-                    case 1:  //한국어->
-                        switch (targetLang){
-                            case 1: wr.writeBytes(postParms1_1);break; //->한국어
-                            case 2: wr.writeBytes(postParms1_2);break; //->영어
-                            case 3: wr.writeBytes(postParms1_3);break; //->일본어
-                        }
-                    case 2:  //영어->
-                        switch (targetLang){
-                            case 1: wr.writeBytes(postParms2_1);break; //->한국어
-                            case 2: wr.writeBytes(postParms2_2);break; //->영어
-                            case 3: wr.writeBytes(postParms2_3);break; //->일본어
-                        }
-                    case 3:  //일본어->
-                        switch (targetLang){
-                            case 1: wr.writeBytes(postParms3_1);break;
-                            case 2: wr.writeBytes(postParms3_2);break;
-                            case 3: wr.writeBytes(postParms3_3);break;
-                        }
-                }*/
-                wr.writeBytes(postParms);
+                if(sourceLang==1){
+                    if(targetLang==1){
+                        wr.writeBytes(postParms1_1);
+                    }
+                    else if(targetLang==2){
+                        wr.writeBytes(postParms1_2);
+                    }
+                    else if(targetLang==3){
+                        wr.writeBytes(postParms1_3);
+                    }
+                }
+                else if(sourceLang==2){
+                    if(targetLang==1){
+                        wr.writeBytes(postParms2_1);
+                    }
+                    else if(targetLang==2){
+                        wr.writeBytes(postParms2_2);
+                    }
+                    else if(targetLang==3){
+                        wr.writeBytes(postParms2_3);
+                    }
+                }
+                else if(sourceLang==3){
+                    if(targetLang==1){
+                        wr.writeBytes(postParms3_1);
+                    }
+                    else if(targetLang==2){
+                        wr.writeBytes(postParms3_2);
+                    }
+                    else if(targetLang==3){
+                        wr.writeBytes(postParms3_3);
+                    }
+                }
+
                 wr.flush();
                 wr.close();
 
@@ -189,27 +189,18 @@ public class Translate extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_translate);
 
+          /*
+        translationText = (EditText) findViewById(R.id.et_source);
+        translationButton = (Button) findViewById(R.id.bt_translate);
+        resultText = (TextView) findViewById(R.id.tv_result);
+        translationButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                new BackgroundTask().execute();
+            }
+        });
+         */
     }
-    public void onMove(View view) {
-        Intent intent = null;
-        switch (view.getId())
-        {
-            case R.id.Forum_btn :
-                break;
-            case R.id.Setting_btn :
-                intent = new Intent(Translate.this, Setting.class);
-                startActivity(intent);
-                finish();
-                break;
-            case R.id.Home_btn :
-                intent = new Intent(Translate.this, Home.class);
-                startActivity(intent);
-                finish();
-            default:
-                return;
-        }
 
-
-    }
 
 }

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -21,248 +22,140 @@ import java.sql.Time;
 import java.util.ArrayList;
 
 public class TimeTable extends AppCompatActivity {
-
-
     int start_hour, start_minute;
     int end_hour, end_minute;
-    String choose_Day="";
+    String choose_Day = "";
     Button add_lecture;
     EditText lecture_name;
     EditText professor_name;
     Spinner spinner;
 
-    TextView Monday0;
-    TextView Tuesday0;
-    TextView Wendseday0;
-    TextView Thursday0;
-    TextView Friday0;
-    TextView Saturday0;
-    TextView Sunday0;
 
-    TextView Monday1;
-    TextView Tuesday1;
-    TextView Wendseday1;
-    TextView Thursday1;
-    TextView Friday1;
-    TextView Saturday1;
-    TextView Sunday1;
+    TextView[] Monday = new TextView[14];
+    TextView[] Tuesday = new TextView[14];
+    TextView[] Wendseday = new TextView[14];
+    TextView[] Thursday = new TextView[14];
+    TextView[] Friday = new TextView[14];
+    TextView[] Saturday = new TextView[14];
+    TextView[] Sunday = new TextView[14];
 
-    TextView Monday2;
-    TextView Tuesday2;
-    TextView Wendseday2;
-    TextView Thursday2;
-    TextView Friday2;
-    TextView Saturday2;
-    TextView Sunday2;
-
-    TextView Monday3;
-    TextView Tuesday3;
-    TextView Wendseday3;
-    TextView Thursday3;
-    TextView Friday3;
-    TextView Saturday3;
-    TextView Sunday3;
-
-    TextView Monday4;
-    TextView Tuesday4;
-    TextView Wendseday4;
-    TextView Thursday4;
-    TextView Friday4;
-    TextView Saturday4;
-    TextView Sunday4;
-
-    TextView Monday5;
-    TextView Tuesday5;
-    TextView Wendseday5;
-    TextView Thursday5;
-    TextView Friday5;
-    TextView Saturday5;
-    TextView Sunday5;
-
-    TextView Monday6;
-    TextView Tuesday6;
-    TextView Wendseday6;
-    TextView Thursday6;
-    TextView Friday6;
-    TextView Saturday6;
-    TextView Sunday6;
-
-    TextView Monday7;
-    TextView Tuesday7;
-    TextView Wendseday7;
-    TextView Thursday7;
-    TextView Friday7;
-    TextView Saturday7;
-    TextView Sunday7;
-
-    TextView Monday8;
-    TextView Tuesday8;
-    TextView Wendseday8;
-    TextView Thursday8;
-    TextView Friday8;
-    TextView Saturday8;
-    TextView Sunday8;
-
-    TextView Monday9;
-    TextView Tuesday9;
-    TextView Wendseday9;
-    TextView Thursday9;
-    TextView Friday9;
-    TextView Saturday9;
-    TextView Sunday9;
-
-    TextView Monday10;
-    TextView Tuesday10;
-    TextView Wendseday10;
-    TextView Thursday10;
-    TextView Friday10;
-    TextView Saturday10;
-    TextView Sunday10;
-
-    TextView Monday11;
-    TextView Tuesday11;
-    TextView Wendseday11;
-    TextView Thursday11;
-    TextView Friday11;
-    TextView Saturday11;
-    TextView Sunday11;
-
-    TextView Monday12;
-    TextView Tuesday12;
-    TextView Wendseday12;
-    TextView Thursday12;
-    TextView Friday12;
-    TextView Saturday12;
-    TextView Sunday12;
-
-    TextView Monday13;
-    TextView Tuesday13;
-    TextView Wendseday13;
-    TextView Thursday13;
-    TextView Friday13;
-    TextView Saturday13;
-    TextView Sunday13;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_time_table);
-        spinner = (Spinner)findViewById(R.id.day);
-        Monday0 = (TextView)findViewById(R.id.monday0);
-        Tuesday0 = (TextView)findViewById(R.id.tuesday0);
-        Wendseday0 = (TextView)findViewById(R.id.wednesday0);
-        Thursday0 = (TextView)findViewById(R.id.tuesday0);
-        Friday0 = (TextView)findViewById(R.id.friday0);
-        Saturday0 = (TextView)findViewById(R.id.saturday0);
-        Sunday0 = (TextView)findViewById(R.id.sunday0);
+        spinner = (Spinner) findViewById(R.id.day);
 
-        Monday1 = (TextView)findViewById(R.id.monday1);
-        Tuesday1 = (TextView)findViewById(R.id.tuesday1);
-        Wendseday1 = (TextView)findViewById(R.id.wednesday1);
-        Thursday1 = (TextView)findViewById(R.id.tuesday1);
-        Friday1 = (TextView)findViewById(R.id.friday1);
-        Saturday1 = (TextView)findViewById(R.id.saturday1);
-        Sunday1 = (TextView)findViewById(R.id.sunday1);
+        Monday[0] = (TextView) findViewById(R.id.monday0);
+        Monday[1] = (TextView) findViewById(R.id.monday1);
+        Monday[2] = (TextView) findViewById(R.id.monday2);
+        Monday[3] = (TextView) findViewById(R.id.monday3);
+        Monday[4] = (TextView) findViewById(R.id.monday4);
+        Monday[5] = (TextView) findViewById(R.id.monday5);
+        Monday[6] = (TextView) findViewById(R.id.monday6);
+        Monday[7] = (TextView) findViewById(R.id.monday7);
+        Monday[8] = (TextView) findViewById(R.id.monday8);
+        Monday[9] = (TextView) findViewById(R.id.monday9);
+        Monday[10] = (TextView) findViewById(R.id.monday10);
+        Monday[11] = (TextView) findViewById(R.id.monday11);
+        Monday[12] = (TextView) findViewById(R.id.monday12);
+        Monday[13] = (TextView) findViewById(R.id.monday13);
 
-        Monday2 = (TextView)findViewById(R.id.monday2);
-        Tuesday2 = (TextView)findViewById(R.id.tuesday2);
-        Wendseday2 = (TextView)findViewById(R.id.wednesday2);
-        Thursday2 = (TextView)findViewById(R.id.tuesday2);
-        Friday2 = (TextView)findViewById(R.id.friday2);
-        Saturday2 = (TextView)findViewById(R.id.saturday2);
-        Sunday2 = (TextView)findViewById(R.id.sunday2);
+        Tuesday[0] = (TextView) findViewById(R.id.tuesday0);
+        Tuesday[1] = (TextView) findViewById(R.id.tuesday1);
+        Tuesday[2] = (TextView) findViewById(R.id.tuesday2);
+        Tuesday[3] = (TextView) findViewById(R.id.tuesday3);
+        Tuesday[4] = (TextView) findViewById(R.id.tuesday4);
+        Tuesday[5] = (TextView) findViewById(R.id.tuesday5);
+        Tuesday[6] = (TextView) findViewById(R.id.tuesday6);
+        Tuesday[7] = (TextView) findViewById(R.id.tuesday7);
+        Tuesday[8] = (TextView) findViewById(R.id.tuesday8);
+        Tuesday[9] = (TextView) findViewById(R.id.tuesday9);
+        Tuesday[10] = (TextView) findViewById(R.id.tuesday10);
+        Tuesday[11] = (TextView) findViewById(R.id.tuesday11);
+        Tuesday[12] = (TextView) findViewById(R.id.tuesday12);
+        Tuesday[13] = (TextView) findViewById(R.id.tuesday13);
 
-        Monday3 = (TextView)findViewById(R.id.monday3);
-        Tuesday3 = (TextView)findViewById(R.id.tuesday3);
-        Wendseday3 = (TextView)findViewById(R.id.wednesday3);
-        Thursday3 = (TextView)findViewById(R.id.tuesday3);
-        Friday3 = (TextView)findViewById(R.id.friday3);
-        Saturday3 = (TextView)findViewById(R.id.saturday3);
-        Sunday3 = (TextView)findViewById(R.id.sunday3);
+        Wendseday[0] = (TextView) findViewById(R.id.wednesday0);
+        Wendseday[1] = (TextView) findViewById(R.id.wednesday1);
+        Wendseday[2] = (TextView) findViewById(R.id.wednesday2);
+        Wendseday[3] = (TextView) findViewById(R.id.wednesday3);
+        Wendseday[4] = (TextView) findViewById(R.id.wednesday4);
+        Wendseday[5] = (TextView) findViewById(R.id.wednesday5);
+        Wendseday[6] = (TextView) findViewById(R.id.wednesday6);
+        Wendseday[7] = (TextView) findViewById(R.id.wednesday7);
+        Wendseday[8] = (TextView) findViewById(R.id.wednesday8);
+        Wendseday[9] = (TextView) findViewById(R.id.wednesday9);
+        Wendseday[10] = (TextView) findViewById(R.id.wednesday10);
+        Wendseday[11] = (TextView) findViewById(R.id.wednesday11);
+        Wendseday[12] = (TextView) findViewById(R.id.wednesday12);
+        Wendseday[13] = (TextView) findViewById(R.id.wednesday13);
 
-        Monday4 = (TextView)findViewById(R.id.monday4);
-        Tuesday4 = (TextView)findViewById(R.id.tuesday4);
-        Wendseday4 = (TextView)findViewById(R.id.wednesday4);
-        Thursday4 = (TextView)findViewById(R.id.tuesday4);
-        Friday4 = (TextView)findViewById(R.id.friday4);
-        Saturday4 = (TextView)findViewById(R.id.saturday4);
-        Sunday4 = (TextView)findViewById(R.id.sunday4);
 
-        Monday5 = (TextView)findViewById(R.id.monday5);
-        Tuesday5 = (TextView)findViewById(R.id.tuesday5);
-        Wendseday5 = (TextView)findViewById(R.id.wednesday5);
-        Thursday5 = (TextView)findViewById(R.id.tuesday5);
-        Friday5 = (TextView)findViewById(R.id.friday5);
-        Saturday5 = (TextView)findViewById(R.id.saturday5);
-        Sunday5 = (TextView)findViewById(R.id.sunday5);
+        Thursday[0] = (TextView) findViewById(R.id.thursday0);
+        Thursday[1] = (TextView) findViewById(R.id.thursday1);
+        Thursday[2] = (TextView) findViewById(R.id.thursday2);
+        Thursday[3] = (TextView) findViewById(R.id.thursday3);
+        Thursday[4] = (TextView) findViewById(R.id.thursday4);
+        Thursday[5] = (TextView) findViewById(R.id.thursday5);
+        Thursday[6] = (TextView) findViewById(R.id.thursday6);
+        Thursday[7] = (TextView) findViewById(R.id.thursday7);
+        Thursday[8] = (TextView) findViewById(R.id.thursday8);
+        Thursday[9] = (TextView) findViewById(R.id.thursday9);
+        Thursday[10] = (TextView) findViewById(R.id.thursday10);
+        Thursday[11] = (TextView) findViewById(R.id.thursday11);
+        Thursday[12] = (TextView) findViewById(R.id.thursday12);
+        Thursday[13] = (TextView) findViewById(R.id.thursday13);
 
-        Monday6 = (TextView)findViewById(R.id.monday6);
-        Tuesday6 = (TextView)findViewById(R.id.tuesday6);
-        Wendseday6 = (TextView)findViewById(R.id.wednesday6);
-        Thursday6 = (TextView)findViewById(R.id.tuesday6);
-        Friday6 = (TextView)findViewById(R.id.friday6);
-        Saturday6 = (TextView)findViewById(R.id.saturday6);
-        Sunday6 = (TextView)findViewById(R.id.sunday6);
+        Friday[0] = (TextView) findViewById(R.id.friday0);
+        Friday[1] = (TextView) findViewById(R.id.friday1);
+        Friday[2] = (TextView) findViewById(R.id.friday2);
+        Friday[3] = (TextView) findViewById(R.id.friday3);
+        Friday[4] = (TextView) findViewById(R.id.friday4);
+        Friday[5] = (TextView) findViewById(R.id.friday5);
+        Friday[6] = (TextView) findViewById(R.id.friday6);
+        Friday[7] = (TextView) findViewById(R.id.friday7);
+        Friday[8] = (TextView) findViewById(R.id.friday8);
+        Friday[9] = (TextView) findViewById(R.id.friday9);
+        Friday[10] = (TextView) findViewById(R.id.friday10);
+        Friday[11] = (TextView) findViewById(R.id.friday11);
+        Friday[12] = (TextView) findViewById(R.id.friday12);
+        Friday[13] = (TextView) findViewById(R.id.friday13);
 
-        Monday7 = (TextView)findViewById(R.id.monday7);
-        Tuesday7 = (TextView)findViewById(R.id.tuesday7);
-        Wendseday7 = (TextView)findViewById(R.id.wednesday7);
-        Thursday7 = (TextView)findViewById(R.id.tuesday7);
-        Friday7 = (TextView)findViewById(R.id.friday7);
-        Saturday7 = (TextView)findViewById(R.id.saturday7);
-        Sunday7 = (TextView)findViewById(R.id.sunday7);
 
-        Monday8 = (TextView)findViewById(R.id.monday8);
-        Tuesday8 = (TextView)findViewById(R.id.tuesday8);
-        Wendseday8 = (TextView)findViewById(R.id.wednesday8);
-        Thursday8 = (TextView)findViewById(R.id.tuesday8);
-        Friday8 = (TextView)findViewById(R.id.friday8);
-        Saturday8 = (TextView)findViewById(R.id.saturday8);
-        Sunday8 = (TextView)findViewById(R.id.sunday8);
+        Saturday[0] = (TextView) findViewById(R.id.saturday0);
+        Saturday[1] = (TextView) findViewById(R.id.saturday1);
+        Saturday[2] = (TextView) findViewById(R.id.saturday2);
+        Saturday[3] = (TextView) findViewById(R.id.saturday3);
+        Saturday[4] = (TextView) findViewById(R.id.saturday4);
+        Saturday[5] = (TextView) findViewById(R.id.saturday5);
+        Saturday[6] = (TextView) findViewById(R.id.saturday6);
+        Saturday[7] = (TextView) findViewById(R.id.saturday7);
+        Saturday[8] = (TextView) findViewById(R.id.saturday8);
+        Saturday[9] = (TextView) findViewById(R.id.saturday9);
+        Saturday[10] = (TextView) findViewById(R.id.saturday10);
+        Saturday[11] = (TextView) findViewById(R.id.saturday11);
+        Saturday[12] = (TextView) findViewById(R.id.saturday12);
+        Saturday[13] = (TextView) findViewById(R.id.saturday13);
 
-        Monday9 = (TextView)findViewById(R.id.monday9);
-        Tuesday9 = (TextView)findViewById(R.id.tuesday9);
-        Wendseday9 = (TextView)findViewById(R.id.wednesday9);
-        Thursday9 = (TextView)findViewById(R.id.tuesday9);
-        Friday9 = (TextView)findViewById(R.id.friday9);
-        Saturday9 = (TextView)findViewById(R.id.saturday9);
-        Sunday9 = (TextView)findViewById(R.id.sunday9);
-
-        Monday10 = (TextView)findViewById(R.id.monday10);
-        Tuesday10 = (TextView)findViewById(R.id.tuesday10);
-        Wendseday10 = (TextView)findViewById(R.id.wednesday10);
-        Thursday10 = (TextView)findViewById(R.id.tuesday10);
-        Friday10 = (TextView)findViewById(R.id.friday10);
-        Saturday10 = (TextView)findViewById(R.id.saturday10);
-        Sunday10 = (TextView)findViewById(R.id.sunday10);
-
-        Monday11 = (TextView)findViewById(R.id.monday11);
-        Tuesday11 = (TextView)findViewById(R.id.tuesday11);
-        Wendseday11 = (TextView)findViewById(R.id.wednesday11);
-        Thursday11 = (TextView)findViewById(R.id.tuesday11);
-        Friday11 = (TextView)findViewById(R.id.friday11);
-        Saturday11 = (TextView)findViewById(R.id.saturday11);
-        Sunday11 = (TextView)findViewById(R.id.sunday11);
-
-        Monday12 = (TextView)findViewById(R.id.monday12);
-        Tuesday12 = (TextView)findViewById(R.id.tuesday12);
-        Wendseday12 = (TextView)findViewById(R.id.wednesday12);
-        Thursday12 = (TextView)findViewById(R.id.tuesday12);
-        Friday12 = (TextView)findViewById(R.id.friday12);
-        Saturday12 = (TextView)findViewById(R.id.saturday12);
-        Sunday12 = (TextView)findViewById(R.id.sunday12);
-
-        Monday13 = (TextView)findViewById(R.id.monday13);
-        Tuesday13 = (TextView)findViewById(R.id.tuesday13);
-        Wendseday13 = (TextView)findViewById(R.id.wednesday13);
-        Thursday13 = (TextView)findViewById(R.id.tuesday13);
-        Friday13 = (TextView)findViewById(R.id.friday13);
-        Saturday13 = (TextView)findViewById(R.id.saturday13);
-        Sunday13 = (TextView)findViewById(R.id.sunday13);
+        Sunday[0] = (TextView) findViewById(R.id.sunday0);
+        Sunday[1] = (TextView) findViewById(R.id.sunday1);
+        Sunday[2] = (TextView) findViewById(R.id.sunday2);
+        Sunday[3] = (TextView) findViewById(R.id.sunday3);
+        Sunday[4] = (TextView) findViewById(R.id.sunday4);
+        Sunday[5] = (TextView) findViewById(R.id.sunday5);
+        Sunday[6] = (TextView) findViewById(R.id.sunday6);
+        Sunday[7] = (TextView) findViewById(R.id.sunday7);
+        Sunday[8] = (TextView) findViewById(R.id.sunday8);
+        Sunday[9] = (TextView) findViewById(R.id.sunday9);
+        Sunday[10] = (TextView) findViewById(R.id.sunday10);
+        Sunday[11] = (TextView) findViewById(R.id.sunday11);
+        Sunday[12] = (TextView) findViewById(R.id.sunday12);
+        Sunday[13] = (TextView) findViewById(R.id.sunday13);
 
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.day,android.R.layout.simple_spinner_dropdown_item);
+                R.array.day, android.R.layout.simple_spinner_dropdown_item);
 
         spinner.setAdapter(adapter);
 
@@ -277,14 +170,23 @@ public class TimeTable extends AppCompatActivity {
         //   time = (EditText) findViewById(R.id.time);
         //  day = (EditText) findViewById(R.id.day);
 
+        choose_Day = (String) spinner.getAdapter().getItem(spinner.getSelectedItemPosition());
         if (lecture_name.getText().toString().length() == 0 || professor_name.getText().toString().length() == 0) {
             Toast.makeText(TimeTable.this, "Error", Toast.LENGTH_SHORT).show();
 
         } else {
-            choose_Day = (String)spinner.getAdapter().getItem(spinner.getSelectedItemPosition());
+
             Toast.makeText(TimeTable.this, "Lecture is Added.\n" + "Lecture Name : " + lecture_name.getText().toString() +
                     "\n" + "Professor Name : " + professor_name.getText().toString() + "\n" +
-                    "Lecture Time : "+choose_Day+ " " + start_hour + ":" + start_minute + "~" + end_hour + ":" + end_minute , Toast.LENGTH_LONG).show();
+                    "Lecture Time : " + choose_Day + " " + start_hour + ":" + start_minute + "~" + end_hour + ":" + end_minute, Toast.LENGTH_LONG).show();
+
+            changeColor();
+
+            lecture_name.setText(" ");
+            lecture_name.setHint("Lecture Name");
+            professor_name.setText(" ");
+
+            professor_name.setHint("Professor_name");
 
         }
 
@@ -298,6 +200,117 @@ public class TimeTable extends AppCompatActivity {
         TimePickerDialog start = new TimePickerDialog(this, listener2, 8, 00, true);
         start.show();
 
+
+    }
+
+    public void changeColor() {
+        int cnt = 0;
+
+        if (choose_Day.equals("Monday")) {
+            for (int i = start_hour - 8; i < end_hour - 8; i++) {
+                Monday[i].setBackgroundColor(Color.parseColor("#B2EBF2"));
+                Monday[i].setTextColor(Color.parseColor("#000000"));
+                if (cnt == 0) {
+                    Monday[i].setText(lecture_name.getText().toString() + "\n" + professor_name.getText().toString());
+                    cnt++;
+                }
+                else
+                {
+                    Monday[i].setText(" ");
+                }
+                Toast.makeText(TimeTable.this, "HI", Toast.LENGTH_SHORT);
+            }
+
+        } else if (choose_Day.equals("Tuesday")) {
+            for (int i = start_hour - 8; i < end_hour - 8; i++) {
+                Tuesday[i].setBackgroundColor(Color.parseColor("#D1C4E9"));
+                Tuesday[i].setTextColor(Color.parseColor("#000000"));
+
+                if (cnt == 0) {
+                    Tuesday[i].setText(lecture_name.getText().toString() + "\n" + professor_name.getText().toString());
+                    cnt++;
+                }
+                else
+                {
+                    Tuesday[i].setText(" ");
+                }
+            }
+        } else if (choose_Day.equals("Wendseday")) {
+            for (int i = start_hour - 8; i < end_hour - 8; i++) {
+                Wendseday[i].setBackgroundColor(Color.parseColor("#FFECB3"));
+                Wendseday[i].setTextColor(Color.parseColor("#000000"));
+
+                if (cnt == 0) {
+                    Wendseday[i].setText(lecture_name.getText().toString() + "\n" + professor_name.getText().toString());
+                    cnt++;
+                }
+                else
+                {
+                    Wendseday[i].setText(" ");
+                }
+            }
+
+        } else if (choose_Day.equals("Thursday")) {
+            for (int i = start_hour - 8; i < end_hour - 8; i++) {
+                Thursday[i].setBackgroundColor(Color.parseColor("#C8E6C9"));
+                Thursday[i].setTextColor(Color.parseColor("#000000"));
+
+                if (cnt == 0) {
+                    Thursday[i].setText(lecture_name.getText().toString() + "\n" + professor_name.getText().toString());
+                    cnt++;
+                }
+                else
+                {
+                    Thursday[i].setText(" ");
+                }
+            }
+
+        } else if (choose_Day.equals("Friday")) {
+            for (int i = start_hour - 8; i < end_hour - 8; i++) {
+                Friday[i].setBackgroundColor(Color.parseColor("#B2DFDB"));
+                Friday[i].setTextColor(Color.parseColor("#000000"));
+
+                if (cnt == 0) {
+                    Friday[i].setText(lecture_name.getText().toString() + "\n" + professor_name.getText().toString());
+                    cnt++;
+                }
+                else
+                {
+                    Friday[i].setText(" ");
+                }
+            }
+
+        } else if (choose_Day.equals("Saturday")) {
+            for (int i = start_hour - 8; i < end_hour - 8; i++) {
+                Saturday[i].setBackgroundColor(Color.parseColor("#FFCA28"));
+                Saturday[i].setTextColor(Color.parseColor("#000000"));
+
+                if (cnt == 0) {
+                    Saturday[i].setText(lecture_name.getText().toString() + "\n" + professor_name.getText().toString());
+                    cnt++;
+                }
+                else
+                {
+                    Saturday[i].setText(" ");
+                }
+            }
+
+        } else if (choose_Day.equals("Sunday")) {
+            for (int i = start_hour - 8; i < end_hour - 8; i++) {
+                Sunday[i].setBackgroundColor(Color.parseColor("#9CCC65"));
+                Sunday[i].setTextColor(Color.parseColor("#000000"));
+
+                if (cnt == 0) {
+                    Sunday[i].setText(lecture_name.getText().toString() + "\n" + professor_name.getText().toString());
+                    cnt++;
+                }
+                else
+                {
+                    Sunday[i].setText(" ");
+                }
+            }
+
+        }
 
     }
 
@@ -334,9 +347,7 @@ public class TimeTable extends AppCompatActivity {
 
     };
 
-    public void Choose_day(View view) {
-        ;
-    }
+
     public void onMove(View view) {
         Intent intent = null;
         switch (view.getId())

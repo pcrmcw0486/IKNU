@@ -1,43 +1,51 @@
 <resources>
     <string name="app_name">iknu</string>
-    <string name="email">E-mail</string>
-    <string name="password">Password</string>
+    <string name="email">イーメール</string>
+    <string name="password"> パスワード</string>
 
-    <string name="signin">Login</string>
-    <string name="success_login">Success_Login</string>
-    <string name="failed_login">Failed_Login</string>
+    <string name="signin">ログイン</string>
+    <string name="success_login">ログイン成功しました。</string>
+    <string name="failed_login">ログイン失敗しました。</string>
 
-    <string name="signup">Signup</string>
-    <string name="success_signup">Success in sign up</string>
-    <string name="failed_signup">Failed to sign up</string>
-    <string name="day">Choose Lecture Day</string>
-    <string name="request_email_validation">Validate your email!</string>
-    <string name="format_email">Incorrect E-mail format</string>
-    <string name="format_password">Incorrect Password format(over 8)</string>
+    <string name="signup">会員加入 </string>
+    <string name="success_signup">会員加入成功 </string>
+    <string name="failed_signup">会員加入失敗</string>
+    <string name="day">講義の日付選択</string>
+    <string name="request_email_validation">メール認証をしてください</string>
+    <string name="format_email">メール形式がとれないです。</string>
+    <string name="format_password">パスワード形式がとれないです。</string>
 
-    <string name="format_name">Typing name in 10</string>
-    <string name="format_age">Incorrect Age</string>
-    <string name="send_email">Complete sending email!</string>
+    <string name="format_name">名前を10席の中に入力してください。</string>
+    <string name="format_age">年が正しくありません。</string>
+    <string name="send_email">メール発送完了!</string>
     <!--> 한국어 번역기 part <-->
-    <string name="Language1">Korean</string>
-    <string name="Language2">English</string>
-    <string name="Language3">Japanese</string>
-    <string name="Translator">파파고 번역기</string>
-    <string name="EditTextHint">Write to translate</string>
-    <string name="search">Search</string>
-    <string name="MyPosition">MyPosition</string>
-    <string name="Log_Out">Logout</string>
-    <string name="Name">Name</string>
-    <string name="StudentId">StudentID</string>
-    <string name="Age">Age</string>
-    <string name="Email">E-mail</string>
-    <string name="Complete">Complete</string>
-    <string name="Back">Back</string>
-    <string name="Prompt1">validate E-mail after sign up</string>
-    <string name="add_lecture">add_lecture</string>
-    <string name="professor_name">professor_name</string>
-    <string name="choose_day">choose_day</string>
-    <string name="time">time</string>
-    <string name="lecture_name">lecture_name</string>
-    <string name="언어">언어</string>
+    <string name="Language1">韓国語</string>
+    <string name="Language2">英語</string>
+    <string name="Language3">日本語 </string>
+    <string name="Translator">PAPAGO 翻訳機</string>
+    <string name="EditTextHint">翻訳する原本を入力してください。</string>
+    <string name="search">検索 </string>
+    <string name="MyPosition">私の位置</string>
+    <string name="Log_Out">ログアウト</string>
+    <string name="Name">名前</string>
+    <string name="StudentId">学生ID</string>
+    <string name="Age">年</string>
+    <string name="Email">メール </string>
+    <string name="Complete">完了</string>
+    <string name="Back">後ろに</string>
+    <string name="Prompt1">会員加入以降にメール認証をしてください 전체듣기</string>
+    <string name="add_lecture">講義追加</string>
+    <string name="professor_name">教授の名前</string>
+    <string name="choose_day">日付選択 </string>
+    <string name="time">時間</string>
+    <string name="lecture_name">講義の名</string>
+    <string name="언어">言語</string>
+    //추가
+    <string name="choose_forum_type">Choose Forum Type</string>
+    <string name="academics">Academics</string>
+    <string name="internship">Internship</string>
+    <string name="seminar">Seminar</string>
+    <string name="cultural">Cultural</string>
+    <string name="club_activities">Club Activities</string>
+    <string name="news">News</string>
 </resources>
