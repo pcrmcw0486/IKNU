@@ -7,13 +7,14 @@
     tools:context=".RecycleViewAdapter">
 
     <TextView
-        android:background="#fff"
+
         android:id="@+id/textview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="25dp"
+        android:background="@color/colorPrimaryDark"
         android:gravity="center_vertical"
         android:text="TEST"
-        android:textSize="20dp" />
+        android:textSize="18sp" />
 
 </LinearLayout>

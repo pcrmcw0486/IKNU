@@ -14,6 +14,7 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.Layout;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
@@ -64,7 +65,9 @@ public class Map_Navi extends AppCompatActivity implements TextWatcher, OnMapRea
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map__navi);
 
+
         recyclerView = (RecyclerView)findViewById(R.id.recyclerview);
+
         editText = (EditText)findViewById(R.id.editText);
         editText.addTextChangedListener(this);
 
@@ -97,6 +100,7 @@ public class Map_Navi extends AppCompatActivity implements TextWatcher, OnMapRea
         });
         SupportMapFragment mapFragment =(SupportMapFragment)getSupportFragmentManager().findFragmentById(R.id.mapView);
         mapFragment.getMapAsync(this);
+        recyclerView.bringToFront();
     }
 
     @Override
@@ -111,6 +115,8 @@ public class Map_Navi extends AppCompatActivity implements TextWatcher, OnMapRea
         mMap.addMarker(markerOptions);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(SEOUL));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(10));
+        recyclerView.bringToFront();
+
     }
 
     @Override
@@ -121,6 +127,7 @@ public class Map_Navi extends AppCompatActivity implements TextWatcher, OnMapRea
     @Override
     public void onTextChanged(CharSequence s, int start, int before, int count) {
         adapter.getFilter().filter(s);
+        recyclerView.bringToFront();
     }
 
     @Override
@@ -148,6 +155,7 @@ public class Map_Navi extends AppCompatActivity implements TextWatcher, OnMapRea
             mMap.moveCamera(CameraUpdateFactory.newLatLng(userPosition));
             mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
         }
+        recyclerView.bringToFront();
     }
 
     private Location getMyLocation()
@@ -174,5 +182,8 @@ public class Map_Navi extends AppCompatActivity implements TextWatcher, OnMapRea
 
 
        // 출처: https://vvh-avv.tistory.com/138 [정리잘하고싶다]
+    }
+
+    public void onMove(View view) {
     }
 }
