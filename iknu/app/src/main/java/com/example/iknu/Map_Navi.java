@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Camera;
 import android.location.Location;
@@ -185,5 +186,19 @@ public class Map_Navi extends AppCompatActivity implements TextWatcher, OnMapRea
     }
 
     public void onMove(View view) {
+       Intent intent = null;
+        switch (view.getId())
+        {
+            case R.id.Forum_btn :
+                break;
+            case R.id.Setting_btn :
+                break;
+            case R.id.Home_btn :
+                intent = new Intent(Map_Navi.this, Home.class);
+                startActivity(intent);
+                finish();
+            default:
+                return;
+        }
     }
 }

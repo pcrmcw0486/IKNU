@@ -50,12 +50,12 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         //현재 유저가 로그인 되어 있는지 확인한다.
        FirebaseUser currentUser = firebaseAuth.getCurrentUser();
-       /* if(currentUser != null)
+        if(currentUser != null)
         {
             Intent Home_Intent = new Intent(this, Home.class);
             startActivity(Home_Intent);
             //메인 홈 화면으로 이동
-        }*/
+        }
     }
 
     public void singUp(View view) {
@@ -118,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
                                 Toast.makeText(MainActivity.this, R.string.success_login, Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(MainActivity.this, Home.class);
                                 startActivity(intent);
+                                finish();
                             }
                             else
                                 Toast.makeText(MainActivity.this,"이메일인증을하십시오",Toast.LENGTH_SHORT).show();

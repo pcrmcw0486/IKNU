@@ -27,10 +27,15 @@ public class Home extends AppCompatActivity {
         {
             case R.id.map_btn :
                 intent = new Intent(Home.this,Map_Navi.class);
+                startActivity(intent);
                 break;
             case R.id.timetable_btn :
+                intent = new Intent(Home.this, TimeTable.class);
+                startActivity(intent);
                 break;
             case R.id.translate_btn :
+                intent = new Intent(Home.this, Translate.class);
+                startActivity(intent);
                 break;
             case R.id.Forum_btn :
                 break;
@@ -40,6 +45,8 @@ public class Home extends AppCompatActivity {
                 default:
                     return;
         }
-        startActivity(intent);
-    }
+
+        finish();
+        }
+
 }

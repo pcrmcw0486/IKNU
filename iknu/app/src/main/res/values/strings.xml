@@ -10,4 +10,12 @@
     <string name="signup">회원가입</string>
     <string name="success_signup">회원가입 성공</string>
     <string name="failed_signup">회원가입 실패</string>
+    <string name="day">Choose Lecture Day</string>
+
+    <!--> 한국어 번역기 part <-->
+    <string name="Language1">한글</string>
+    <string name="Language2">영어</string>
+    <string name="Language3">일본어</string>
+    <string name="Translator">파파고 번역기</string>
+    <string name="EditTextHint">번역할 원본을 입력해 주세요.</string>
 </resources>
